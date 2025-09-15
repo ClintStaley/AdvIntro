@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2025-09-14T21:55:38.327000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+		h4.western { font-family: "Arial", sans-serif; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.cjk { font-family: "Andale Sans UI"; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.ctl { font-family: "Mangal"; font-size: 13pt; so-language: zxx; font-style: italic }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Week 2</h1>
+<h1 lang="zxx" class="western">Assignments</h1>
+<p lang="zxx">This assignment extends the Conway Life game (see
+posting ConwayLifeAns.py) as we revised it in lecture. 
+</p>
+<h2 lang="zxx" class="western">Basic</h2>
+<h4 lang="zxx" class="western">ConwayLifeBa.py</h4>
+<p lang="zxx">1. Extend the program to allow one to press one of the
+number keys 1-4, then click the mouse while the key is depressed, and
+as a result get one of the 4 canned patterns r-pentomino(1),
+glider(2), spaceship(3), or glider gun(4). Place the center of the
+pattern at the mouse click, wrapping around the edges toroidally if
+needed. Do a full copy of the rectangle of the pattern, thus also
+clearing any other cells than those in the pattern within its
+rectangle. 
+</p>
+<p lang="zxx">And, *use the list provided* at the bottom of the
+ConwayLifeAns.py file for the pattern contents; don't write all that
+by hand!</p>
+<p lang="zxx">Note that there is a pygame.MOUSEBUTTONUP event to
+match the MOUSEBUTTONDOWN event. This will let you know if when keys
+are released, which must be part of your logic for this to work.</p>
+<p lang="zxx">2. Track the number of generations for which each
+living cell has been alive. Increase the cell's darkness by 1/4 for
+each generation it's been alive, so that it gradually changes from
+light gray to fully black over 4 generations. Do this by changing at
+most 7 lines of code in the program, and be prepared to describe
+those 7 lines in your demo.</p>
+<p lang="zxx">3. Add handling to the **numpad, not keyboard** + and -
+keys that will, respectively, speed the simulation up or slow it down
+by a factor of 2. See how fast you can run the simulation before it
+&quot;tops out&quot; at a given frame rate due to compute
+limitations. The constants for those two keys are K_KP_PLUS and
+K_KP_MINUS. The keyboard + is harder to use because you have to
+separately track the shift operation.</p>
+<h2 lang="zxx" class="western">Bronze (no requirements)</h2>
+<h2 lang="zxx" class="western">Silver (no requirement)</h2>
+<h2 lang="zxx" class="western">Gold</h2>
+<h4 lang="zxx" class="western">ConwayLifeGo.py</h4>
+<p lang="zxx">The simulation can be greatly accelerated by keeping
+track not only of cells that have changed, but also, separately, of
+their neighbors. When you think about it, only the neighbors of
+changed cells can possibly change in the next generation, so having
+that list means you only need to recompute neighbor counts for those
+cells in the next generation -- far faster than the current nested
+loop. Ensure that you don't add the same cell twice to the list,
+doing so will slow down your simulation without actually causing a
+logic error.</p>
+<p lang="zxx"><span lang="zxx">As part of this, </span><span lang="zxx">add
+a generation count, displayed in the title bar, so you can track the
+number of generations per second you're able to run.</span></p>
+<h2 lang="zxx" class="western">Turning In</h2>
+<p lang="zxx">Demo for me each of Python files, and show the source
+so I can check style. Upon my approval, submit your code to Populi.</p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2025-09-09T11:29:05.064000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+		h4.western { font-family: "Arial", sans-serif; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.cjk { font-family: "Andale Sans UI"; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.ctl { font-family: "Mangal"; font-size: 13pt; so-language: zxx; font-style: italic }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Week 1</h1>
+<h1 lang="zxx" class="western">Assignments</h1>
+<p lang="zxx">This assignment uses PyGame to draw different pieces of
+abstract art.   The point is to exercise basic coding concepts such
+as lists, loops, if-statements, and functions, but it's a more
+entertaining way to do so than, say, checkbook-balancing code.</p>
+<h2 lang="zxx" class="western">Basic</h2>
+<h4 lang="zxx" class="western">AbstractGridBa.py</h4>
+<p lang="zxx">Write code to generate the AbstractGridBa.png image. 
+Start with the supplied AbstractGridBa.py file, which offers initial
+data structres, e.g. giving the colors and the rectangular areas in
+the image, to save you the tedium of figuring those out.</p>
+<p lang="zxx">Importantly, you're allowed only one window.set_at call
+to set one pixel to a given color -- no other graphical calls.  So,
+you'll need to do a nested loop across the range of X/Y coordinates
+in the 800x800 image, and determine what color each should be.</p>
+<p lang="zxx">Note that AbstractGridBa.png is gray unless your point
+is within one of four rectangular regions.  Within those, it is black
+if it's in a 40x40 &quot;checkerboard&quot; square that's black. 
+(Modulo (%) may be of use here.)  And within the rectangles, and
+within white squares, pixels are colored in 100-pixel rings radiating
+out from the image center.</p>
+<p lang="zxx">You may find it easiest to this incrementally.  Start,
+for instance, by getting the background gray, and each rectangle
+white.  Then add the black squares, and finally the circular rings</p>
+<p lang="zxx">You must write this reasonably elegantly, and with
+correct style.  My own implementation has a draw_pattern method of
+under 20 lines not counting blank lines and comments.</p>
+<h2 lang="zxx" class="western">Bronze</h2>
+<h4 lang="zxx" class="western">AbstractPatternBr.py</h4>
+<p lang="zxx">Write code to generate AbstractPatternBr.png.  Do this
+by making functions for the following:</p>
+<p lang="zxx">1. Drawing a shaded &quot;bullseye&quot; circle on
+white background within a rectangular area</p>
+<p lang="zxx">2. Drawing a grid of circles within a rectangular area,
+allowing a choice of solid color or bullseye (the latter by calling
+function 1)</p>
+<h2 lang="zxx" class="western">Silver (no requirement)</h2>
+<h2 lang="zxx" class="western">Gold</h2>
+<h4 lang="zxx" class="western">AbstractPatternGo.py</h4>
+<p lang="zxx">Add one more method to draw a spiral in a rectangular
+area, and use this to create AbstractPatternGo.png.  The spiral bands
+are 4 pixels wide, with 4 pixel gaps between.  Yours may be slightly
+different from mine, but must be a true continous spiral filling the
+region, starting upper left and turning clockwise.</p>
+<h2 lang="zxx" class="western">Platinum</h2>
+<h4 lang="zxx" class="western">AbstractPatternPl.py</h4>
+<p lang="zxx">If there is enough interest, say at least 3 students,
+I'll run a Code Art competition for extra credit.   This competition
+involves writing a short, elegant bit of code, at most a page or two,
+that produces an aesthetically interesting abstract artistic pattern.
+ Entries are judged on the combination of code elegance and
+cleverness, and on the beauty of the output.  If we run this, I'll
+volunteer to add an entry of my own as well.</p>
+<h2 lang="zxx" class="western">Turning In</h2>
+<p lang="zxx"><span lang="zxx">Demo for me each of </span><span lang="zxx">Python
+files, and show the source so I can check style.  Upon my approval,
+submit your code to Populi.</span></p>
+</body>
+</html>

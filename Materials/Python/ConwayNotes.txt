@@ -1,0 +1,13 @@
+1. Move 5 to a constant
+2. Add changed_cells init
+3. Add flip call in init
+4. Self test in neighborhood
+5. Add toggled cell to changed_list
+6. Clear changed cell list
+
+Design
+1. Seriously rework game logic in cell counting
+2. Factor out initialization of grid
+3. Convert same to list comprehension
+4. Redo neighbor computation using 8-element list
+5. 
