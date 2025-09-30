@@ -5,7 +5,7 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
 	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
-	<meta name="changed" content="2025-09-14T21:55:38.327000000"/>
+	<meta name="changed" content="2025-09-23T08:55:15.761000000"/>
 	<meta name="Info 1" content=""/>
 	<meta name="Info 2" content=""/>
 	<meta name="Info 3" content=""/>
@@ -46,8 +46,10 @@ rectangle.
 ConwayLifeAns.py file for the pattern contents; don't write all that
 by hand!</p>
 <p lang="zxx">Note that there is a pygame.MOUSEBUTTONUP event to
-match the MOUSEBUTTONDOWN event. This will let you know if when keys
-are released, which must be part of your logic for this to work.</p>
+match the MOUSEBUTTONDOWN event. This will let you know if and when
+keys are released, which might be part of your logic for this to
+work.  (There are approaches that don't need the MOUSEBUTTONUP, and
+that's fine if you use them)</p>
 <p lang="zxx">2. Track the number of generations for which each
 living cell has been alive. Increase the cell's darkness by 1/4 for
 each generation it's been alive, so that it gradually changes from
@@ -65,18 +67,101 @@ separately track the shift operation.</p>
 <h2 lang="zxx" class="western">Silver (no requirement)</h2>
 <h2 lang="zxx" class="western">Gold</h2>
 <h4 lang="zxx" class="western">ConwayLifeGo.py</h4>
-<p lang="zxx">The simulation can be greatly accelerated by keeping
-track not only of cells that have changed, but also, separately, of
-their neighbors. When you think about it, only the neighbors of
-changed cells can possibly change in the next generation, so having
-that list means you only need to recompute neighbor counts for those
-cells in the next generation -- far faster than the current nested
-loop. Ensure that you don't add the same cell twice to the list,
-doing so will slow down your simulation without actually causing a
-logic error.</p>
-<p lang="zxx"><span lang="zxx">As part of this, </span><span lang="zxx">add
-a generation count, displayed in the title bar, so you can track the
-number of generations per second you're able to run.</span></p>
+<p lang="zxx">Some cells change in each generation, and when you
+think abou it, only their *neighbors* can possibly change in the
+following generation, since only their neighbors have new neighbor
+counts. If we keep a list of cells whose neighbors have changed, we
+only need to reexamine those in the following generation. We can
+maintain such a list by adding the neighbors of any cell who changes
+in the current generation. (Note that even a changed cell itself will
+not re-change in the next generation unless one of its neighbors has
+changed.)</p>
+<p lang="zxx">Track those cells, and reexamine only them in each
+generation, using a single loop to go through them -- no nested
+row/col loop.</p>
+<p lang="zxx">Also, add a generation count, displayed in the title
+bar, so you can track the number of generations per second you're
+able to run.</p>
+<p lang="zxx">And, for your own testing and for the demo, add a print
+of the size of that neighbor-changed list on each generation. This
+may float up or down a bit, but should not grow to a sizeable portion
+of the cells. And, for a simple pattern like a 2x2, which is stable
+and nonchanging, that neighbor-changed count should drop to 0.</p>
+<p lang="zxx">Specifically, check the following:</p>
+<p lang="zxx">1. You have *no* nested for-loops in method &quot;step&quot;,
+just a single loop through the neighbors-changed list and possible
+adjustment of only those cells. You may find you want a deep-copy of
+the grid, however. That's OK.</p>
+<p lang="zxx">2. The first few generations of a 2x2 pattern, done by
+toggling 4 cells and then running the simulation, looks like this.
+(The 16 comes from the fact that 16 cells had neighbors changed due
+to the toggling, but after that no cells have changed neighbors)</p>
+<p lang="zxx" style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 9pt">Checking
+16 cells at gen 0</font></font></font></p>
+<p lang="zxx" style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 9pt">Checking
+0 cells at gen 1</font></font></font></p>
+<p lang="zxx" style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 9pt">Checking
+0 cells at gen 2</font></font></font></p>
+<p lang="zxx" style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 9pt">Checking
+0 cells at gen 3</font></font></font></p>
+<p lang="zxx" style="margin-bottom: 0in"><br/>
+
+</p>
+<p lang="zxx">3. The first 20 generations of R-pentomino look like
+this, with the number of cells with changed neighbors for each
+generation.  Note that this was obtained by hand-entering the
+R-pentomino.  If you use the preconfigured 1-pattern, then my code
+(and yours) should change 9 cells, setting 5 to live and 4 to dead. 
+Then the first count would be 25, and the rest as shown.</p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+21 cells at gen 0</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+18 cells at gen 1</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+25 cells at gen 2</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+14 cells at gen 3</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+21 cells at gen 4</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+23 cells at gen 5</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+19 cells at gen 6</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+36 cells at gen 7</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+44 cells at gen 8</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+53 cells at gen 9</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+59 cells at gen 10</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+40 cells at gen 11</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+41 cells at gen 12</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+49 cells at gen 13</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+38 cells at gen 14</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+49 cells at gen 15</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+45 cells at gen 16</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+67 cells at gen 17</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+75 cells at gen 18</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+99 cells at gen 19</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+102 cells at gen 20</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+97 cells at gen 21</font></font></font></p>
+<p style="margin-bottom: 0in"><font color="#000000"><font face="Lucida Console, serif"><font size="2" style="font-size: 10pt">Checking
+97 cells at gen 22</font></font></font></p>
+<p style="margin-bottom: 0in"><br/>
+
+</p>
 <h2 lang="zxx" class="western">Turning In</h2>
 <p lang="zxx">Demo for me each of Python files, and show the source
 so I can check style. Upon my approval, submit your code to Populi.</p>

@@ -52,4 +52,10 @@
       * Add subrectangle using ands/ors
          * Usual drill on logic, truthy/falsey, various languages
          
-         
+### Life Project....
+
+### Numpy
+   * Tensor concept
+   * Walk through NumpyDemo.py
+      * Questions: Increase an array by 1
+      * Given a set of 2-D points, rotate ccw and scale by 1.414

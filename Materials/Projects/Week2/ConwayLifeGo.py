@@ -77,6 +77,9 @@ class Life:
         # Track changed cells for efficient drawing
         self.changed_cells = []
         
+        # Track living cells for generation increase
+        self.living_cells = []
+        
         # Set of cells that are affected by a change
         self.affected_cells = set()
         
@@ -113,25 +116,36 @@ class Life:
         
         # Clear the changed cells list
         self.changed_cells = []
+        
+        # Increase counts of living cells
+        for row, col in self.living_cells:
+            self.grid[row][col] = min(4, self.grid[row][col] + 1)
+        self.living_cells = []
+        
         old_affected_cells = self.affected_cells
         self.affected_cells = set()
         
         # Apply Conway's rules to each cell
         #for row in range(self.height):
         #   for col in range(self.width):
+        print(f"Checking {len(old_affected_cells)} cells at gen {self.generation}")
         for row, col in old_affected_cells:
-                neighbors = self.count_living_neighbors(row, col)
-                current_state = self.grid[row][col]
-                    
-                # Apply Conway's rules
-                new_grid[row][col] = min(4, self.grid[row][col] + 1) if (
-                    neighbors == 3 or neighbors == 2 and current_state
-                ) else 0
+            neighbors = self.count_living_neighbors(row, col)
+            current_state = self.grid[row][col]
                 
-                # Track changed cells
-                if new_grid[row][col] != self.grid[row][col]:
-                    self.changed_cells.append((row, col))
-                    self.update_affected_cells(row, col)
+            # Apply Conway's rules
+            new_grid[row][col] = min(4, self.grid[row][col] + 1) if (
+                neighbors == 3 or neighbors == 2 and current_state
+            ) else 0
+            
+            if new_grid[row][col] > 0:
+                self.living_cells.append((row, col))
+                
+            # Track changed cells
+            if new_grid[row][col] < 2 and \
+                new_grid[row][col] != self.grid[row][col]:
+                self.changed_cells.append((row, col))
+                self.update_affected_cells(row, col)
             
         # Replace current grid with new generation
         self.grid = new_grid
@@ -143,6 +157,8 @@ class Life:
             self.grid[row][col] = 0 if self.grid[row][col] else 1
             self.changed_cells.append((row, col))
             self.update_affected_cells(row, col)
+            if self.grid[row][col] > 0:
+                self.living_cells.append((row, col))
     
     def draw(self):
         """Update only the changed cells on screen"""

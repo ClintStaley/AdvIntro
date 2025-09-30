@@ -1,3 +1,26 @@
+Notes on the Fall use of this survey  1lo to 5 hi:
+
+Earl 5
+Allen 5
+Jack 5
+Rogan 4
+Nathan 4
+Judah 4
+Sam 4
+Micah 3
+Max 3
+Charlie 3
+Eli 1
+
+Ian 3.5
+Pierce 3
+Milan 3
+Eitan 2.5
+
+None of the others who dropped (Kyle, Almar etc) did more than a 1-2
+
+
+
 # STM3910C Programming Survey
 
 ## Name ___________________________________________
