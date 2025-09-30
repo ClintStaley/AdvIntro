@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2025-09-30T16:48:49.416000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+		h4.western { font-family: "Arial", sans-serif; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.cjk { font-family: "Andale Sans UI"; font-size: 13pt; so-language: zxx; font-style: italic }
+		h4.ctl { font-family: "Mangal"; font-size: 13pt; so-language: zxx; font-style: italic }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Week 3</h1>
+<h1 lang="zxx" class="western">Assignments</h1>
+<p lang="zxx">This assignment extends the Gravity simulation (see
+posting GravityAns.py) as we developed it in lecture. 
+</p>
+<h2 lang="zxx" class="western">Basic</h2>
+<h4 lang="zxx" class="western">GravityBa.py</h4>
+<p lang="zxx">1. Fill in the missing code for create_random_system,
+following the instructions in the comments. Test it to be sure you
+get a uniform, circular, cloud of points, and that the cloud,
+collectively, doesn't drift from the center. You may find these Numpy
+operations useful: stack, sum, sqrt, cos, sin.  Of particular
+interest is that sqrt.  Selecting a random distance from the center
+will result in denser coverage near the center than at the rim of the
+cloud, since the amount of area for each step outward in radius
+increases as the square of the radius.  
+</p>
+<p lang="zxx">It may seem counterintuitive, but one can compensate
+for this by taking the square root of the random values 0-1.  This
+results in a skew toward 1, not toward 0.  Random values .25, .5, and
+.75, for instance, become .5, .701, and .87.   The likelihood of any
+particular square root is proportional to the likelihood of its
+*square*, the original uniform random value.  This is just right;
+each possible random distance from the center will be proportional to
+its square.</p>
+<p lang="zxx">2. Rewrite find_closest_pair so it has no loops, and
+uses Numpy operations. You may find these Numpy methods of interest:
+fill_diagonal, sum, argmin. You may find you must translate a &quot;flat&quot;
+index to a 2-D index. If so, do this by hand; do *not* use
+unravel_index or any equivalent. 
+</p>
+<h2 lang="zxx" class="western">Bronze</h2>
+<h4 lang="zxx" class="western">GravityBr.py</h4>
+<p lang="zxx">1. Maintain a 2x2 Numpy tensor as a member datum, to
+express scaling and rotation. When drawing, use this matrix to scale
+and rotate the points about the center of the window before drawing. 
+</p>
+<p lang="zxx">For each press of left or right arrow, multiply into
+that matrix a .1R rotation ccw or cw about the origin. For each press
+of up arrow or down arrow, multiply into it a scaling by 1.1 or .9,
+respectively. (Note that multiplication on the *left* is how you add
+a new transformation to an existing one.) 
+</p>
+<p lang="zxx">Make 4 static 2x2 tensors, as shown in the sample code,
+to represent the rotations and scalings.  With each relevant
+keystroke, multiply in the proper tensor, so as to create a single,
+combined 2x2 tensor that represents all rotations and scalings thus
+far entered.  Then, use this 2x2 tensor to build a temporary list of
+adjusted positions when drawing the window, thus having the effect of
+scaling and rotating the view.  Do *not* actually change the
+positions internally; the rotation and scaling is only for drawing.</p>
+<p lang="zxx">2. Adjust compute_gravitational_forces so that the
+effective distance used for force computation is at least 2. Do this
+without adding any lines of code. See that this dramatically reduces
+the &quot;bounce&quot; phenomenon.</p>
+<h2 lang="zxx" class="western">Silver (no requirement)</h2>
+<h2 lang="zxx" class="western">Gold (no requirement)</h2>
+<h2 lang="zxx" class="western">Turning In</h2>
+<p lang="zxx">Demo for me each of Python files, and show the source
+so I can check style. Upon my approval, submit your code to Populi.</p>
+</body>
+</html>
