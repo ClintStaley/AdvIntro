@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="link-queue-quiz-1">Link Queue Quiz</h1>
+<p dir="auto">Name_________________________________________________</p>
+<p dir="auto">Below is an implementation of a variation of <code>LinkQueue</code> that uses a dummy node, a bit like the one for <code>DblLinkQueue</code>.  This dummy node is always present (created in the constructor, as you can see), and is always pointed to by <code>mHead</code> (and also by <code>mTail</code> when the queue is empty).  The dummy node contains no useful data; all the actual data is in the nodes after the dummy.  The real head of the queue is thus the node pointed to by the dummy node.</p>
+<p dir="auto">The code for the original <code>LinkQueue</code> is simplified by the addition of this dummy node, since <code>mHead</code> and <code>mTail</code> never become null, and there is always at least one node in the queue.  Below is an implementatin of this changed queue, with a number of blank lines to fill in.  Make no other changes, and don't cram multiple statements onto one line.  When there are only a few blank lines, you must complete the code using only those lines.</p>
+<pre><code dir="auto">import java.util.Iterator;
+import com.cstaley.csci182.Queues.Queue;
+
+public class LinkHdQueue&lt;Item&gt; implements Queue&lt;Item&gt;, Iterable&lt;Item&gt; {     
+   protected static class Node {
+      public Object data;
+      public Node next;
+      
+      public Node(Object d, Node n) {
+         data = d;
+         next = n;
+      }
+   }
+   
+   protected Node mHead;
+   protected Node mTail;
+   
+   public LinkHdQueue() {
+      mHead = mTail = new Node(null, null);   
+   }
+   
+   // Make this queue a deep copy of &quot;other&quot;. Do this the easy if slightly slow
+   // way by using &quot;add&quot; and an iterator. 
+   public LinkHdQueue(LinkHdQueue other) {
+
+      _____________________________;  
+      for (Object obj: other)
+         add(obj);
+   }
+   
+   @Override
+   public void add(Object val) {
+
+      ___________________________;  
+
+      ___________________________;  
+   }
+   
+   @Override
+   public Item getFront() {
+      if (isEmpty())
+         throw new NullPointerException();
+         
+      return (Item) ________________________;  
+   }
+   
+   @Override
+   public void remove() {
+      if (isEmpty())
+         throw new NullPointerException();
+
+      _____________________________;   
+
+      if (________________________)   
+         mTail = mHead;
+   }
+   
+   public boolean isEmpty() {
+
+      return _______________________;  
+   }
+}
+</code></pre>
+
+</body>
+</html>

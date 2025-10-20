@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2025-10-19T07:50:04.704000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+		h3.cjk { font-family: "NSimSun" }
+		h3.ctl { font-family: "Arial" }
+		code.cjk { font-family: "NSimSun", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Queues and Dynamic Data Structures</h1>
+<h1 lang="zxx" class="western">Basic</h1>
+<h2 lang="zxx" class="western"><a name="linkqueue"></a>LinkQueue</h2>
+<h3 class="western"><a name="add-new-methods"></a>Add New Methods</h3>
+<p lang="zxx">Use the LinkQueue class included with this assignment.
+This has the code we wrote in class.</p>
+<p lang="zxx">Complete the supplied copy constructor method so you
+can make a new LinkQueue that is a copy of another. Note the
+instructional comment in the Java file. This can be a two-line
+method.</p>
+<p lang="zxx">Complete the addToEnd method, following the comments in
+the Java file. In particular do not use any loop for this. Just
+change a few pointers.</p>
+<p lang="zxx">Complete the undoAdd method, again following the
+comments.</p>
+<h3 class="western"><a name="test-the-methods"></a>Test the methods</h3>
+<p lang="zxx">Use the supplied test code in the main function, and
+add a few lines of your own in the same spirit. Hand in a screenshot
+of your LinkQueue main running correctly in Eclipse.</p>
+<h2 lang="zxx" class="western"><a name="dbllinkqueue"></a>DblLinkQueue</h2>
+<h3 class="western"><a name="add-isgood-method"></a>Add isGood method</h3>
+<p lang="zxx">Doubly linked lists are complex, with lots of pointer
+changes you have to get right. Any time you have such a complex data
+structure, it's a good idea to write a structure-checking routine,
+which you can call after you do other operations to ensure the
+structure is still correct. So, before you do anything else, write
+the code for isGood, which traverses every node of the list,
+including the head node, and makes sure that it connects properly to
+its two neighbors, and that they point back to it properly.</p>
+<p lang="zxx">There's an isGood call just after the first three add
+calls. Confirm that this results in &quot;true&quot;. Then, briefly
+make a small error in&nbsp;<code class="western">add</code>, and see
+that isGood returns false.</p>
+<h3 class="western"><a name="add-new-methods2"></a>Add New Methods</h3>
+<p lang="zxx">Complete the following&nbsp;<strong>one at a time</strong>:</p>
+<ul>
+	<li><p lang="zxx">remove</p>
+	<li><p lang="zxx">undoAdd</p>
+	<li><p lang="zxx">addToEnd</p>
+</ul>
+<p lang="zxx">As you write each one, do the following:</p>
+<ul>
+	<li><p lang="zxx">Respect the comments regarding number of
+	lines/pointer-changes.</p>
+	<li><p lang="zxx">Draw diagrams! You'll need them to keep track of
+	what you're doing.</p>
+	<li><p lang="zxx">Consider empty-queue cases, but only add
+	if-statements when you have to. (You may find you almost never need
+	to, which is the main advantage of a head node.)</p>
+	<li><p lang="zxx">After you do each routine, write at least one call
+	of it in main(), followed by&nbsp;<code class="western">isGood</code>&nbsp;calls
+	on any queues affected by it.</p>
+</ul>
+<p lang="zxx">Writing and checking these&nbsp;<strong>one at a
+time</strong>&nbsp;will give you step by step progress, and
+incremental debugging challenges. Don't write it all at once.</p>
+<h3 class="western"><a name="create-an-iterator-class"></a>Create an
+Iterator class</h3>
+<p lang="zxx">Next do these steps, again checking with test code
+(e.g. using a foreach loop on a DblLinkQueue):</p>
+<ul>
+	<li><p lang="zxx">Write an iterator class that has&nbsp;<code class="western">hasNext</code>&nbsp;and&nbsp;<code class="western">next</code>.
+	For now, leave&nbsp;<code class="western">remove</code>&nbsp;unimplemented,
+	as we did for LinkQueue.</p>
+	<li><p lang="zxx">Write a copy constructor.</p>
+	<li><p lang="zxx">Now, add a valid&nbsp;<code class="western">remove</code>,
+	noting that per docs,&nbsp;<code class="western">remove</code>&nbsp;removes
+	the most recently returned item from&nbsp;<code class="western">next</code>.
+	Iterate over a queue and do some removes. Check the result
+	with&nbsp;<code class="western">isGood</code>.</p>
+</ul>
+<h3 class="western"><a name="test-the-methods2"></a>Test the methods</h3>
+<p lang="zxx">Comment out your test main (but leave it so you can
+submit it) and uncomment the main I supplied. Be sure everything
+still works correctly under my main program.</p>
+<h2 lang="zxx" class="western"><a name="arrqueue"></a>ArrQueue</h2>
+<p lang="zxx">Use the ArrQueue class from class for this assignemnt.</p>
+<h3 class="western"><a name="write-add-and-remove"></a>Write add and
+remove</h3>
+<p lang="zxx">Start by writing the add and remove methods, so you can
+test the queue. You'll need to take the mEmpty flag into account in
+add, and set it in both add and remove under the right circumstances.
+If the array is already full and you're adding a new value, resize
+the array, and also undo any wrapping when you copy the old data into
+the new larger new array. Write tests that wrap the queue, that cause
+a resizing, and that ultimately empty the queue.</p>
+<h3 class="western"><a name="write-getsize"></a>Write getSize</h3>
+<p lang="zxx">This method must cover several cases: the normal case
+where mHead &lt;= mTail, the wrapped case, the empty case, and the
+totally-full case (note that both of these latter cases have mHead ==
+mTail). Add getSize calls to your earlier tests to be sure you get
+the right size in all cases.</p>
+<h3 class="western"><a name="write-equals"></a>Write equals</h3>
+<p lang="zxx">Checking equality of two ArrQueues is tricky since they
+may have the same contents, but not the same mHead/mTail values. As
+long as they have the same contents, in the same order, they are
+equal. And, the contents themselves (which are Object references,
+recall) must be deep-equal compared, not just shallow equal.</p>
+<h3 class="western"><a name="write-the-arriterator-class-and-the-iterator-function"></a>
+Write the ArrIterator class, and the iterator function</h3>
+<p lang="zxx">The ArrIterator must work even for ArrQueues that are
+wrapped around, and it must distinguish between cases where the queue
+is empty and mHead == mTail, and where it is full and mHead == mTail.</p>
+<p lang="zxx">When you write ArrIterator:</p>
+<ul>
+	<li><p lang="zxx">Write an iterator class that has&nbsp;<code class="western">hasNext</code>&nbsp;and&nbsp;<code class="western">next</code>.</p>
+	<li><p lang="zxx">For now, leave&nbsp;<code class="western">remove</code>&nbsp;unimplemented,
+	as we did for LinkQueue.</p>
+	<li><p lang="zxx">Test next and hasNext, using a foreach loop in the
+	main.</p>
+	<li><p lang="zxx">Now, add a valid&nbsp;<code class="western">remove</code>,
+	noting that per docs,&nbsp;<code class="western">remove</code>&nbsp;removes
+	the most recently returned item from&nbsp;<code class="western">next</code>.
+	Iterate over a queue and do some removes.</p>
+</ul>
+<h3 class="western"><a name="test-the-methods3"></a>Test the methods</h3>
+<p lang="zxx">Comment out your test main (but leave it so you can
+submit it) and uncomment the main I supplied. Be sure everything
+still works correctly under my main program.</p>
+<h2 lang="zxx" class="western">Turning In</h2>
+<p lang="zxx">No demo needed for this assignment.  Instead, submit
+each of the three Java files, plus, for each, a screenshot of the
+test main (my code plus your improvements) running for each.</p>
+</body>
+</html>
