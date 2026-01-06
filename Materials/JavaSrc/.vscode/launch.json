@@ -1,0 +1,448 @@
+{
+   // Use IntelliSense to learn about possible attributes.
+   // Hover to view descriptions of existing attributes.
+   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "type": "java",
+         "name": "Stacks1",
+         "request": "launch",
+         "mainClass": "com.cstaley.stm3911.Stacks1.Stacks1",
+         "projectName": "JavaSrc_f178d2e8"
+      },
+      {
+         "type": "java",
+         "name": "Game",
+         "request": "launch",
+         "mainClass": "com.cstaley.stm3911.MMind.V2.Game",
+         "projectName": "JavaSrc_f178d2e8"
+      },
+      {
+         "type": "java",
+         "name": "Guess",
+         "request": "launch",
+         "mainClass": "com.cstaley.stm3911.MMind.V2.Guess",
+         "projectName": "JavaSrc_f178d2e8"
+      },
+      {
+         "type": "java",
+         "name": "MMind",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.MMind.MMind",
+         "projectName": "JavaSrc_f178d2e8"
+      },
+      {
+         "type": "java",
+         "name": "BinPacker",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.AI.Answer.BinPacker",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "SudokuPuzzle",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.AI.Answer.SudokuPuzzle",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkPQueue",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.LinkPQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "InsertSort",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Sorting.InsertSort",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "MergeSort",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.MergeSort",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeSet",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.TreeSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Current File",
+         "request": "launch",
+         "mainClass": "${file}"
+      },
+      {
+         "type": "java",
+         "name": "MMind",
+         "request": "launch",
+         "mainClass": "MMind",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "MMind(1)",
+         "request": "launch",
+         "mainClass": "answer.MMind",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "SolvePuzzle",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.AI.SolvePuzzle",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LLHashSet",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.HashTables.Answer.LLHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LPHashSet",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.HashTables.Answer.LPHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LLHashSet(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.HashTables.LLHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LPHashSet(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.HashTables.LPHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TicTacToe",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Homeworks.TicTacToe.Answer.TicTacToe",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TicTacToeGPT",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Homeworks.TicTacToe.Answer.TicTacToeGPT",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TicTacToe(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Homeworks.TicTacToe.TicTacToe",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "MMind(2)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.MMind.MMind",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "MMind(3)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.MMind.ans.MMind",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "InFixToPostFix",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.PostFix.Answer.InFixToPostFix",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "PostFix",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.PostFix.Answer.PostFix",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "InFixToPostFix(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.PostFix.InFixToPostFix",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "InFixToPostFixClass",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.PostFix.InFixToPostFixClass",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "PostFix(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.PostFix.PostFix",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "DblLinkQueue",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.DblLinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "GemMoves",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.GemMoves",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "IsMagicSquare",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.IsMagicSquare",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LPHashSet(2)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.LPHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkStack",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.LinkStack",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TicTacToe(2)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.TicTacToe",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "ArrQueue (ProgTest)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.Answer.ArrQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "DblLinkQueue(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.DblLinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "GemMovesTest",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.GemMovesTest",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "IsMagicSquareTest",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.IsMagicSquareTest",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LPHashSet(3)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.LPHashSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkStack(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.LinkStack",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TicTacToe(3)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.ProgTests.TicTacToe",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "ArrQueue(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.Answer.ArrQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "DblLinkQueue(2)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.Answer.DblLinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkHdQueue",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.Answer.LinkHdQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkQueue",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.Answer.LinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "DblLinkQueue(3)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.DblLinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "HeapPQueue",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.HeapPQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkQueue(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Queues.LinkQueue",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "RecursionHW",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Recursion.Answer.RecursionHW",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "RecursionSamples",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Recursion.Answer.RecursionSamples",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "RecursionHW(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Recursion.RecursionHW",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "RecursionSamples(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Recursion.RecursionSamples",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Stacks1",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Stacks1.Stacks1",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Stacks2",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Stacks2.Stacks2",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "LinkStack(2)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Stacks3.Answer.LinkStack",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Stacks3",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Stacks3.Answer.Stacks3",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Stacks3(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Stacks3.Stacks3",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeMap",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Trees.Answer.TreeMap",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeSet",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Trees.Answer.TreeSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeSetTest",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Trees.Answer.TreeSetTest",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeMap(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Trees.TreeMap",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "TreeSet(1)",
+         "request": "launch",
+         "mainClass": "com.cstaley.csci182.Trees.TreeSet",
+         "projectName": "src_a571ffa4"
+      },
+      {
+         "type": "java",
+         "name": "Date",
+         "request": "launch",
+         "mainClass": "dale.ch1.Date",
+         "projectName": "src_a571ffa4"
+      }
+   ]
+}

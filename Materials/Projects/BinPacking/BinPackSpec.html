@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="bin-packing-project">Bin Packing Project</h1>
+<p dir="auto">Write a 2-D binpacking branch-and-bound solution, using the (adjusted) interfaces
+from our DFS exercise.  In particular, create classes:</p>
+<ul dir="auto">
+<li dir="auto">BinPacker implementing Problem</li>
+<li dir="auto">BinPackerState implementing State</li>
+<li dir="auto">BinPackerStep implementing Step</li>
+<li dir="auto">BnBSolver implementing Solver, with no code that is specific to bin packing (use the interfaces only, as for DFS)</li>
+</ul>
+<h2 dir="auto" id="input-format">Input format</h2>
+<p dir="auto">The input of the binpacker, for use by BinPacker.read, is the width of the bin
+followed by integer width/heigh pairs, e.g.</p>
+<p dir="auto">10
+7 6
+9 1
+1 8
+2 6
+4 1
+5 1</p>
+<p dir="auto">You may assume no pair's width will exceed that of the bin.</p>
+<h2 dir="auto" id="output-format">Output format</h2>
+<p dir="auto">Output is in the form of a total bin height, followed by lower-right corner
+placements for each of the items in the input.  The placements must form an
+optimal packing, though your particular packing may vary from mine.  Run time must
+be comparable to mine.</p>
+<p dir="auto">8
+(9, 1) at (0, 0)
+(1, 8) at (9, 0)
+(4, 1) at (0, 1)
+(5, 1) at (4, 1)
+(7, 6) at (0, 2)
+(2, 6) at (7, 2)</p>
+<h2 dir="auto" id="automated-test-main">Automated test main</h2>
+<p dir="auto">I will provide a set of test inputs and outputs to use, but you must also write
+a test main program for BinPacker of your own that generates and solves random
+test cases by guillotine cuts as we briefly described in class.  Specifically,
+your test main does the following:</p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">Inputs a width and height, a number of items to pack and a loop count, e.g. &quot;10 20 40 5&quot;.
+Check that the number of items &lt;= width*height and give an error if not.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Generate the indicated number of items by starting with a single width x height
+item, and randomly cutting it in half along its largest axis.  E.g. a 10x20 item
+might be cut into a 10x12 and a 10x8.  Repeat this process until you have the
+indicated number of items.  Do this repetition by placing items in a queue, starting
+with just the first item, and then repeatedly drawing the first item from the queue,
+splitting it randomly as described, and adding both new items to the end of the queue.
+If any item drawn from the queue is 1x1, simply place it back on the end without splitting.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Add a constructor to BinPacker that takes a width, and a queue created as described, and sets up
+the problem according to those data.  Solve the constructed BinPacker problem using BnBSolver, and
+confirm that the solution matches the height of the original item before cutting (i.e. that it
+reassembles the guillotine cuts into the original shape, though not necessarily in the same order)</p>
+</li>
+<li dir="auto">
+<p dir="auto">Run a loop doing steps 2-4 as many times as the input indicated (e.g. 5 in our example). Output a
+confirmation that each is correct (or not) as it runs.</p>
+</li>
+</ol>
+<p dir="auto">This setup will let you create and test sample problems with known optimal solutions, of any size.</p>
+<h2 dir="auto" id="submit">Submit</h2>
+<p dir="auto">Demo your test main for me, and let me review your code.  Then submit BinPacker.java and BnBSolver.java.</p>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2025-10-22T23:09:36.386000000"/>
+	<meta name="" content=""/>
+	<style type="text/css">
+		h1.cjk { font-family: "NSimSun" }
+		h1.ctl { font-family: "Arial" }
+		h2.cjk { font-family: "NSimSun" }
+		h2.ctl { font-family: "Arial" }
+		pre.cjk { font-family: "NSimSun", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 class="western">Adv Intro Midterm</h1>
+<p>Name_________________________________________________</p>
+<h2 class="western"><a name="1-48pts-vocabulary-1"></a>1 48pts
+Vocabulary</h2>
+<p>Give terms to match each of these definitions. Correct spelling is
+required.</p>
+<p>Pseudo machine language into which Java source is translated.</p>
+<p>Program that runs that pseudo machine code (two different terms)</p>
+<p>The class from which yours is derived</p>
+<p>Constructor that requires no arguments</p>
+<p>Methods that every Java class has (give two examples)</p>
+<p>2 to the 14th power</p>
+<p>Class that is designed to hold an elemental type in order to make
+it an object</p>
+<p>Type of comparison meant to be implemented via a call of <code class="western">equals</code>
+in Java</p>
+<p>Memory area from which <code class="western">new</code> gets its
+storage.</p>
+<p>Object referred to by <code class="western">this</code> or <code class="western">self</code></p>
+<p>Three-letter term for the idea that a derived class is
+type-compatible with a reference to its base class</p>
+<p>Alternate term for &quot;derived class&quot;</p>
+<p>Program that translates from a language like Java to a machine
+language</p>
+<p>Program that directly reads and executes source code, like Python</p>
+<p>Four letter abbreviation for the order of adding and removing for
+a queue.</p>
+<p>Process by which a 1-dimension in a tensor is expanded to match a
+full dimension in another</p>
+<p><em>Three</em> different terms for the property that ensures that
+regardless of whether the <code class="western">stk</code> pointer
+below points to a LinkStack, ArrStack, or any other kind of Stack,
+the correct <code class="western">push</code> function will get
+called.</p>
+<pre class="western"><code class="western">Stack stk = // Code that creates some kind of Stack object</code>
+<code class="western">stk.push(42)</code></pre><p>
+<br/>
+<br/>
+
+</p>
+<p>Type relationship between Stack and LinkStack that permits this
+assignment: <code class="western">Stack stk = new LinkStack()</code></p>
+<p>Type of casting that is done in this assignment: <code class="western">Stack
+stk = new LinkStack()</code></p>
+<p>Process by which an elemental type is automatically placed into a
+wrapper object when needed.</p>
+<h2 class="western"><a name="2-41pts-java-semantics-1"></a>2 41pts
+Java semantics</h2>
+<p>a. 12pts What does the following code output? Explain why. How
+would you change it to make a deep comparison instead?</p>
+<pre class="western"><code class="western">String s1 = &quot;Test&quot;, s2 = &quot;Test&quot;;</code>
+
+<code class="western">if (s1 == s2)</code>
+<code class="western">   </code><code class="western">System.out.println(&quot;Equal&quot;);</code>
+<code class="western">else</code>
+<code class="western">   </code><code class="western">System.out.println(&quot;Not equal&quot;);</code></pre><p>
+b. 8pts What is the result of this line of code, and why? (Assume
+import java.util.Iterator has been done.)</p>
+<p><code class="western">Iterator itr = new Iterator()</code></p>
+<p>c. 6pts Here is a call of the stack isEmpty function. How many
+parameters does it actually have, and why?</p>
+<p>boolean isEmpty() { return mHead == null; }</p>
+<p>d. 15pts Fill in just the blank lines to create a version of
+CountingLinkStack that refuses to add any duplicate values to the
+stack, silently ignoring push calls that would add a duplicate:</p>
+<pre class="western"><code class="western">class NoDupsLinkStack _______________________ {</code>
+<code class="western">   </code><code class="western">public NoDupsLinkStack() {</code>
+
+<code class="western">      </code><code class="western">____________________</code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">   </code><code class="western">public void ___________________ {</code>
+
+<code class="western">      </code><code class="western">if _________________</code>
+
+<code class="western">         </code><code class="western">_______________________</code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">}</code></pre><h2 class="western">
+<br/>
+<br/>
+
+</h2>
+<h2 class="western" style="page-break-before: always"><a name="3-40pts-java-coding-doubly-linked-lists-1"></a>
+3. 40pts Java Coding: Doubly Linked Lists</h2>
+<p>The following new method for DblLinkQueue swaps the first and
+second nodes (the two to the &quot;right&quot; of the dummy node in
+our diagrams) so that they trade positions in the queue. It throws an
+exception if there are fewer than two nodes aside from the dummy.
+Fill in the missing parts so it works as specified. Note that <code class="western">second</code>
+points to the second node to the right of the dummy. Make no other
+changes.</p>
+<pre class="western"><code class="western">public void swapFirstTwo() {</code>
+<code class="western">   </code><code class="western">// Point to second node in queue</code>
+<code class="western">   </code><code class="western">Node second = ____________________;   </code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">if (mHead.next == mHead ________________________)  // At least two nodes...</code>
+<code class="western">      </code><code class="western">throw new NullPointerException();</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">second.next.prev = __________________________;   </code>
+<code class="western">   </code><code class="western">second.prev = mHead;</code>
+<code class="western">   </code><code class="western">mHead.next.prev = _________________;            </code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">___________________________________   </code>
+<code class="western">   </code><code class="western">second.next = mHead.next;</code>
+<code class="western">   </code><code class="western">mHead.next = second;</code>
+<code class="western">}</code></pre><h2 class="western">
+<a name="4-23pts-python-semantics-1"></a>4 23pts Python Semantics</h2>
+<p>a. 15pts Fill in the missing code per instructions</p>
+<pre class="western"><code class="western">nums = [10, 20, 30]</code>
+
+<code class="western"># Make deep copy by list comprehension</code>
+<code class="western">nums2 = ______________________________ </code>
+
+<code class="western">nums2[-2] += 10</code>
+<code class="western">nums[-1] -= 10</code>
+
+<code class="western"># Set nums3 to max of nums and nums2, via a comprehension</code>
+<code class="western">nums3 = _______________________________ </code>
+<code class="western">print(nums3)      # prints [10, 30, 30]</code></pre><p>
+b. 8pts What is the result of the following print and why?</p>
+<pre class="western"><code class="western">vals = [2, 5, 7]</code>
+<code class="western">vals2 = vals</code>
+<code class="western">vals.append(9)</code>
+<code class="western">print(vals2[-1])</code>
+</pre><h2 class="western">
+<br/>
+<br/>
+
+</h2>
+<h2 class="western" style="page-break-before: always"><a name="5-30pts-python-coding-1"></a>
+5. 30pts Python Coding</h2>
+<p>Here is an implementation of the add_lifeform method from our 
+Life project, basic version. It has 5 bugs to fix, and 3 blank spots
+to fill in. Fix the bugs and fill in the blanks. Don't fix things
+that aren't broken.</p>
+<pre class="western"><code class="western">   </code><code class="western">def add_lifeform(self, pattern_index, center_row, center_col):</code>
+<code class="western">        </code><code class="western">pattern = self.PATTERNS[pattern_index]  # Assume PATTERNS is correct</code>
+<code class="western">        </code><code class="western">pattern_height</code><code class="western">, pattern_width</code><code class="western"> = len(pattern)</code><code class="western">, ________________________</code>
+<code class="western">        </code>
+<code class="western">        </code><code class="western"># No 1x1 patterns allowed</code>
+<code class="western">        </code><code class="western">assert pattern_height &gt; 1 and pattern_width &gt; 1, &quot;1x1 patterns are not allowed&quot;</code>
+<code class="western">        </code>
+<code class="western">        </code><code class="western"># Calculate top-left corner of pattern</code>
+<code class="western">        </code><code class="western">start_row = center_row - pattern_height </code>
+<code class="western">        </code><code class="western">start_col = center_col - pattern_width </code>
+<code class="western">        </code>
+<code class="western">        </code><code class="western"># Place pattern with toroidal wrapping</code>
+<code class="western">        </code><code class="western">for p_row in range(pattern_height):</code>
+<code class="western">            </code><code class="western">for p_col in range(pattern_width):</code>
+<code class="western">                </code><code class="western"># Calculate grid position with toroidal wrapping</code>
+
+<code class="western">                </code><code class="western">grid_row = _______________________________</code>
+
+<code class="western">                </code><code class="western">grid_col = _______________________________</code>
+<code class="western">                    </code>
+<code class="western">                </code><code class="western"># Set cell to alive and mark as changed</code>
+<code class="western">                </code><code class="western">self.grid[p_row][p_col] = pattern[p_row][p_col]</code>
+<code class="western">                </code><code class="western">self.changed_cells.append(grid_row, grid_col)</code></pre><h2 class="western">
+<a name="633pts-numpy-coding-1"></a>6.33pts Numpy Coding</h2>
+<p>a. 15pts Tensor <code class="western">pts</code> represents an
+array of 8 points. Show the output of each print.</p>
+<pre class="western"><code class="western">import numpy as np</code>
+<code class="western">pts = np.array(</code>
+<code class="western">   </code><code class="western">[[1,2], [3,4], [2,5], [4,1], [3,2], [1,5], [2,2], [0,3]])</code>
+<code class="western">print(pts.shape)                    </code>
+<code class="western">a = np.mean(pts, axis=1)</code>
+<code class="western">print(a.shape)                      </code>
+<code class="western">print(a)                           </code>
+
+<code class="western">b = np.mean(pts, axis=0)</code>
+<code class="western">print(b.shape)                      </code>
+<code class="western">print(b)                           </code></pre><p>
+<br/>
+<br/>
+
+</p>
+<p>b. 18pts The points in pts are clearly centered in the first
+quadrant. Starting with just pts, write a single assignment that
+moves the entire cloud to center instead on the origin, putting this
+into zerodPts. Your code must work for any set of point values, not
+just this one concrete example.</p>
+<p>zerodPts = _____________________________________</p>
+<p>Add an assigment that cuts the distance from each point to the
+origin in half, effectively &quot;compressing&quot; the cloud of
+points without changing its basic shape.</p>
+<p>closerPts = ___________________________________</p>
+</body>
+</html>

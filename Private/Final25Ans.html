@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="advanced-intro-final">Advanced Intro Final</h1>
+<p dir="auto">Name_________________________________________________</p>
+<h2 dir="auto" id="1-66pts-vocabulary">1 66pts Vocabulary</h2>
+<p dir="auto">Object referred to by <code>this</code> which is is implicitly passed as a parameter <strong>receiver object</strong></p>
+<p dir="auto">Term for the rule that makes upcasts automatically allowed <strong>ISA</strong></p>
+<p dir="auto">Max value you can count up to in 32 bits (unsigned).  An approximate value is OK. <strong>4 billion</strong></p>
+<p dir="auto">Alternate term for &quot;base class&quot; <strong>superclass</strong></p>
+<p dir="auto">Resolving collisions in a hash table by looking downward for the next empty spot <strong>linear probing</strong></p>
+<p dir="auto">Resolving collisions in a hash table by squaring the amount you step each time, to avoid clustering <strong>quadratic probing</strong></p>
+<p dir="auto">AI state-space search that operates like the TreeSet iterator <strong>DFS</strong></p>
+<p dir="auto">Implementing this interface makes your class work with a for-each loop <strong>Iterable</strong></p>
+<p dir="auto">Area of RTS that contains information for one currently-running function call <strong>stack frame or activation record</strong></p>
+<p dir="auto">Memory sequence of elements typical for a 2-D array in modern tensor libraries <strong>row-major order</strong></p>
+<p dir="auto">General term for the &quot;wrap around&quot; memory order of our ArrQueue class <strong>circular buffer</strong></p>
+<p dir="auto">Saving the results of prior recursive calls to avoid repetition of calculation <strong>memoization</strong></p>
+<p dir="auto">Recursive case that does <em>not</em> make a recursive call. <strong>base case</strong></p>
+<p dir="auto">Three-word term for property indicated by big-O form, e.g. O(nlogn) <strong>order of complexity</strong></p>
+<p dir="auto">Term for O(n) <strong>linear complexity</strong></p>
+<p dir="auto">Commonly used sorting method that has O(n^2) (n-squared) behavior <strong>insertion sort</strong></p>
+<p dir="auto">Use of inheritance in which you refine or extend an already working base class.
+<strong>implementation inheritance</strong></p>
+<p dir="auto">Interface that describes a type that can self-compare, via a compareTo method <strong>Comparable</strong></p>
+<p dir="auto">Language feature that permits several functions to have the same name.
+<strong>function overloading</strong></p>
+<p dir="auto">Pseudo machine language into which Java source is translated. <strong>bytecode</strong></p>
+<p dir="auto">Constructor that requires no arguments <strong>default constructor</strong></p>
+<p dir="auto">The square root of 16384 <strong>128</strong></p>
+<p dir="auto">Class that is designed to hold an elemental type in order to make it an object <strong>wrapper class</strong></p>
+<p dir="auto">Runtime memory area from which <code>new</code> gets its storage.  <strong>runtime heap</strong></p>
+<p dir="auto">One location in a hash table <strong>bucket</strong></p>
+<p dir="auto">Interface that defines an object usable to compare other objects <strong>Comparator</strong></p>
+<p dir="auto">Any class that holds many values of some other type <strong>container class</strong></p>
+<p dir="auto">Element chosen as the dividing value in a quicksort partition <strong>pivot</strong></p>
+<p dir="auto">Sorting algorithm that repeated scans unsorted elements to find the minimum, and moves it down when found <strong>selection sort</strong></p>
+<p dir="auto">Type of binary tree resulting from addition of all values in already-sorted order <strong>degenerate</strong></p>
+<p dir="auto">Term for a tree node that has no children <strong>leaf</strong></p>
+<p dir="auto">In Numpy and similar libraries, repetition along a dimension to extend it
+from 1 to match the same dimension in another tensor. <strong>broadcasting</strong></p>
+<p dir="auto">Programming language in which Numpy internals are actually implemented <strong>C or C++</strong></p>
+<h2 dir="auto" id="2-24pts-numpy">2. 24pts Numpy</h2>
+<p dir="auto">For each of the prints in this numpy code, show the output.  Be careful to use the right number of braces for any 2-D output.</p>
+<pre><code dir="auto">array = np.array([[1,2,3], [4,5,6]])
+print(array.shape)             **(2,3) 4pts**
+
+array = np.maximum(np.minimum(array, 4), 2)
+print(array)                   **[[2,2,3], [4,4,4]] 8pts**
+
+array = np.dot(array, array.T)  # (transpose)
+print(array)                   **[[17, 28], [28, 48]] 12pts**
+</code></pre>
+<h2 dir="auto" id="3-34pts-stacks">3. 34pts Stacks</h2>
+<h3 dir="auto" id="a-16pts">a. 16pts</h3>
+<p dir="auto">Fill in this function for LinkStack, following the comments:</p>
+<pre><code dir="auto">// Return true iff the top two items on the stack exist (stack has at least two
+// elements) and they have the same data.  Do this with just the single return 
+// statement -- a boolean expression not using ?:.  Do NOT call any other stack methods.
+boolean firstTwoSame() {
+
+   return ________________________________________________________________;
+}
+</code></pre>
+<p dir="auto"><strong>head != null 4pts &amp;&amp; head-&gt;next != null 4pts &amp;&amp; head.data.equals(head.next.data) (8pts)</strong></p>
+<h3 dir="auto" id="b-18pts">b. 18pts</h3>
+<p dir="auto">Fill in this function for LinkStack, following the comments, and adding
+code only at the blank spaces:</p>
+<pre><code dir="auto">// Pop the top n values off the stack, or fewer if there are not n values.
+// Importantly, do this without calling any other method, and by a *single*
+// assignment after the loop (no assignments in the loop).
+void popMultiple(int n) {
+   Node temp;
+
+   for (temp = head; ________________ &amp;&amp; _______________; temp = temp.next)
+      ;
+
+   _____________________________;
+}
+</code></pre>
+<pre><code dir="auto">   for (temp = head; temp != null (4pts) &amp;&amp; n-- &gt; 0 (8pts); temp = temp.next)
+      ;
+
+   head = temp; (6pts)
+</code></pre>
+<h2 dir="auto" id="4-76pts-sorting-concepts">4. 76pts Sorting Concepts</h2>
+<h3 dir="auto" id="a-12pts">a. 12pts</h3>
+<p dir="auto">For an array of 8 elements, what is the maximum number of times that insertion sort's <em>inner</em> loop could run (the maximum total executions of that loop's body across the entire run)?  What array contents would cause this? (Hint: the value is &lt; 32))</p>
+<p dir="auto"><strong>7 summation or 28. 8pts  Purely descending order 4pts</strong></p>
+<h3 dir="auto" id="b-12pts">b. 12pts</h3>
+<p dir="auto">For an array of 10 elements, what is the maximum number of memory <em>write</em> operations into the array that <strong>selection sort</strong> could do and why?  What is the minimum number?</p>
+<p dir="auto"><strong>Max number is 9 swaps x 2 writes/swap for 18 writes 10pts (20 or 10 6pts).  Min
+is zero 2pts</strong></p>
+<h3 dir="auto" id="c-32pts">c. 32pts</h3>
+<p dir="auto">Consider the quicksort partition code below, and answer the following:</p>
+<p dir="auto">i. 6pts Why is there no <code>else</code> for the <code>if</code>?  What variable must be updated if the if is false, and how does this occur?</p>
+<p dir="auto"><strong>No else because value is already on high side (2pts) toPlace must increase (2pts), but this is automatic in loop (2pts)</strong></p>
+<p dir="auto">ii. 6pts If all values are the same, say all equal to 42, how will the array be divided into hi and low parts?  Is this OK?  Why or why not?</p>
+<p dir="auto"><strong>Will all gather on high side since none meet &lt; pivot requirement 3pts. Bad since causes imbalanced partition 3pts (Bad due to endless recursion 0pts)</strong></p>
+<p dir="auto">iii. 4pts Would changing <code>&lt; pivot</code> to <code>&lt;= pivot</code> help in the situation of all-42s?  Why or why not?</p>
+<p dir="auto"><strong>Nope.  Now all gather on low side (4pts)</strong></p>
+<p dir="auto">iv. 8pts Write a single expression using the variables in the loop that determines whether the low side is smaller than the high side at any point during the partition (not just the end).  Remeber that the range being partitioned is [lo, hi).</p>
+<pre><code dir="auto">if (                                 ) // If low is smaller
+</code></pre>
+<p dir="auto"><strong>endOfLow - lo &lt; toPlace - endOfLow 8pts,  &lt;= 7pts, minor oboe 5pts</strong></p>
+<p dir="auto">d. 8pts Values equal to pivot can actually be used to balance the partition if you place them in whichever side (low or hi) is smallest.  Without adding any new lines, do this by adding a single relatively sophisticated additional logic clause to the <code>if (vals[toPlace &lt; pivot])</code> line.</p>
+<p dir="auto"><strong>|| (4pts) vals[toPlace] == pivot (2pts) &amp;&amp; endOfLow - lo &lt; toPlace - endOfLow (4pts)</strong></p>
+<pre><code dir="auto">   endOfLow = lo;       
+   pivot = vals[hi-1];     
+
+   for (toPlace = lo; toPlace &lt; hi-1; toPlace++)
+      if (vals[toPlace] &lt; pivot) {       
+         temp = vals[toPlace];
+         vals[toPlace] = vals[endOfLow];
+         vals[endOfLow] = temp;
+         endOfLow++;
+      }                         
+
+   vals[hi-1] = vals[endOfLow];  // Move pivot to middle
+   vals[endOfLow] = pivot;
+   
+   return endOfLow;         
+</code></pre>
+<h2 dir="auto" id="5-32pts-priority-queues-and-merge-concepts">5. 32pts Priority queues and merge concepts</h2>
+<p dir="auto">Below is an implementation of a merge algorith for LinkPQueue.  This merges
+the receiver object and the q2 parameter into a single queue (with the sorting
+order determined by <code>cmp</code>).  It doesn't copy data; it actually steals the nodes
+from q2 and adds them into the receiver object, leaving q2 empty.</p>
+<p dir="auto">Fill in the blank lines so it works correctly.  Do not add code other than for
+the blank lines.</p>
+<pre><code dir="auto">// Merge q2's nodes into the receiver object, leaving q2 empty. Write a
+// loop to directly merge the nodes, don't use recursion, an iterator
+// or any other methods of the class.
+public void merge(LinkPQueue&lt;Item&gt; q2) {
+   Node prior = null, nd1 = mHead, nd2 = q2.mHead, nextMerge;
+
+   while (nd2 != null) { 
+      if (nd1 == null) {       // Rest of q2 adds to end of main queue
+         nextMerge = nd2;
+         __________________;       **mTail = q2.mTail; 12pts**
+         nd2 = null;            
+                                                            
+      } else if (cmp.compare((Item)nd1.data, (Item)nd2.data) &gt; 0) { 
+         nextMerge = nd1;
+         nd1 = nd1.next;
+      } else {
+         nextMerge = nd2;
+         nd2 = nd2.next;
+         
+         _____________________________;  **nextMerge.next = nd1; 12pts**
+      }
+      if (prior == null)
+         mHead = nextMerge;
+      else
+         prior.next = nextMerge;
+      
+      ___________________________;       **prior = nextMerge; 8pts**
+   }
+   q2.mHead = q2.mTail = null;
+}
+</code></pre>
+<h2 dir="auto" id="6-42pts-complexity">6. 42pts Complexity</h2>
+<h3 dir="auto" id="a-8pts">a. 8pts</h3>
+<p dir="auto">The selection sort algorithm has what order of complexity?  Why?</p>
+<p dir="auto"><strong>O(n^2) 3pts, because an inner scan loop runs each time the outer loop runs 5pts</strong></p>
+<h3 dir="auto" id="b-20pts">b. 20pts</h3>
+<p dir="auto">If an implementation of insertion sort takes 0.1 second on average, sorting an array of 10,000 elements, how long will it take on an array of 640,000 elements?  Provide an estimate accurate to the tenth of a second. Note this can be done <em>in your head</em> if you remember powers of 2 and the nature of O(n^2) complexity.</p>
+<p dir="auto"><strong>409.6 seconds 20pts</strong></p>
+<h3 dir="auto" id="c-14pts">c. 14pts</h3>
+<p dir="auto">If a balanced binary tree of 1,000 elements can be searched in 5 microseconds, how long would you expect a search to take on a balanced tree of 1,000,000 elements?  Why? Answer the same question if both trees are worst-case unbalanced.  As before, this can be done without a lot of computation.</p>
+<p dir="auto"><strong>10 microseconds (7pts) because log doubles with square (3pts).  For degenerate: 5,000 uS or 5 mS (4pts)</strong></p>
+<h2 dir="auto" id="7-64pts-java-semantics">7. 64pts Java semantics</h2>
+<h3 dir="auto" id="a-8pts-1">a. 8pts.</h3>
+<p dir="auto">How many distinct objects (not just references) are created by this line of code
+creating a 5-row 2-D array? How many of them are String objects? <code>String[][] arr = new String[5][3]</code></p>
+<p dir="auto"><strong>6 6pts (21 3pts).  None are Strings 2pts</strong></p>
+<h3 dir="auto" id="b-8pts">b. 8pts</h3>
+<p dir="auto">How many <em>references</em> are created by that same line? How many, if any, are null?</p>
+<p dir="auto"><strong>1 + 5 + 15 = 21 5pts, of which 15 are null 3pts</strong></p>
+<h3 dir="auto" id="c-8pts">c. 8pts</h3>
+<p dir="auto">Write a declaraion of a member function &quot;func&quot; that has <em>absolutely</em> no parameters passed, hidden or otherwise.</p>
+<p dir="auto"><strong>static void func() 8pts</strong></p>
+<h3 dir="auto" id="d-8pts">d. 8pts</h3>
+<p dir="auto">Why is the following line illegal?  (Assume Comparator is correctly imported) <code>Comparator cmp = new Comparator();</code> (Note that use of the &lt;&gt; is optional in generics.)</p>
+<p dir="auto"><strong>Comparator is an interface, so no objects of it can be created. 8pts</strong></p>
+<h3 dir="auto" id="e-10pts">e. 10pts</h3>
+<p dir="auto">Say function A calls B, which calls C, which calls D, and then D throws an exception that is caught in A.  What changes, if any, to the RTS must result from throwing that exception?</p>
+<p dir="auto"><strong>Frames for D, C, and B are popped 10pts</strong></p>
+<h3 dir="auto" id="f-18pts">f. 18pts</h3>
+<p dir="auto">Assume this loop compiles.  Write an equivalent using just a standard while
+loop, and proper assumptions about vals.  Don't worry about imports.  (Note that vals need not be an array, nor indexable, for this loop to work.)</p>
+<pre><code dir="auto">for (String s: vals)
+   # Loop body
+
+</code></pre>
+<p dir="auto"><strong>Answer:</strong></p>
+<pre><code dir="auto">Iterator&lt;String&gt; itr = vals.iterator(); **8pts (no &lt;String&gt; 6pts)**
+while (itr.hasNext()) {                 **4pts**
+   String s = itr.next();               **6pts**
+   # Loop body
+}
+</code></pre>
+<h2 dir="auto" id="8-42pts-lphashset">8. 42pts LPHashSet</h2>
+<p dir="auto">Fill in the blanks, and fix any bugs, in this implementation of LPHashSet.check.
+Don't fix things that aren't broken.  You don't need to check &quot;steps&quot;, just the
+main logic.</p>
+<pre><code dir="auto">   private boolean check() {
+      int vCount = 0, nCount = 0, homeIdx;
+      
+      for (int idx = 0; idx &lt; table.length; idx++) {
+         if (table[idx] == null)
+            nCount++;
+                           **table[idx] != wasFull 10pts != null 4pts**
+         else if (________________________) { 
+            vCount++;
+            homeIdx = Math.abs(table[idx].hashCode()) % table.length;
+            while (______________________) { **homeIdx != idx 8pts**
+               if (table[homeIdx] == null)
+                  ____________________________ **return false; 8pts**
+               homeIdx = (homeIdx + 1) % table.length; **+ -&gt; - 12pts**
+            }
+         }
+      }
+      
+      return vCount == valCount || nCount == nullCount;
+      **|| =&gt; &amp;&amp; 5pts**
+   }
+</code></pre>
+<h2 dir="auto" id="9-27pts-dfs-project">9. 27pts DFS Project</h2>
+<p dir="auto">Fill in the missing line in this implementation of getDistance for GemState</p>
+<pre><code dir="auto"> public int getDistance(State st) {
+   GemState gState = _________________________   **(GemState)st 4pts**
+   int ndx, dist = 0, rDiff, cDiff;
+   
+   for (ndx = 0; ndx &lt; gState.mBoard.length; ndx++) {
+      **&amp;&amp; 2pts gState.mBoard[ndx]-1 != ndx 10pts (oboe 5pts)**
+      if (gState.mBoard[ndx] != 0 _____________________________________) {  
+         rDiff = (gState.mBoard[ndx]-1) / mColDim - ndx / mColDim;
+               **(gState.mBoard[ndx]-1) % mColDim - ndx % mColDim; 
+               1pt for each term; 5pts for each mod operator**
+         cDiff = ___________________________________________________
+         dist += (rDiff &gt; 0 ? rDiff : -rDiff) + (cDiff &gt; 0 ? cDiff : -cDiff);
+      }
+   }
+         
+   return dist;
+}
+</code></pre>
+
+</body>
+</html>

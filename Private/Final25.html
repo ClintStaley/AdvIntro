@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2025-11-16T13:55:13.841000000"/>
+	<meta name="" content=""/>
+	<style type="text/css">
+		h2.cjk { font-family: "NSimSun" }
+		h2.ctl { font-family: "Arial" }
+		pre.cjk { font-family: "NSimSun", monospace }
+		h3.cjk { font-family: "NSimSun" }
+		h3.ctl { font-family: "Arial" }
+		code.cjk { font-family: "NSimSun", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1>Advanced Intro Final</h1>
+<p>Name_________________________________________________</p>
+<h2 class="western"><a name="1-66pts-vocabulary"></a>1 66pts
+Vocabulary</h2>
+<p>Object referred to by <code class="western">this</code> which is
+is implicitly passed as a parameter</p>
+<p>Term for the rule that makes upcasts automatically allowed</p>
+<p>Max value you can count up to in 32 bits (unsigned). An
+approximate value is OK.</p>
+<p>Alternate term for &quot;base class&quot;</p>
+<p>Resolving collisions in a hash table by looking downward for the
+next empty spot</p>
+<p>Resolving collisions in a hash table by squaring the amount you
+step each time, to avoid clustering</p>
+<p>AI state-space search that operates like the TreeSet iterator</p>
+<p>Implementing this interface makes your class work with a for-each
+loop</p>
+<p>Area of RTS that contains information for one currently-running
+function call</p>
+<p>Memory sequence of elements typical for a 2-D array in modern
+tensor libraries</p>
+<p>General term for the &quot;wrap around&quot; memory order of our
+ArrQueue class</p>
+<p>Saving the results of prior recursive calls to avoid repetition of
+calculation</p>
+<p>Recursive case that does <em>not</em> make a recursive call.</p>
+<p>Three-word term for property indicated by big-O form, e.g.
+O(nlogn)</p>
+<p>Term for O(n)</p>
+<p>Commonly used sorting method that has O(n^2) (n-squared) behavior</p>
+<p>Use of inheritance in which you refine or extend an already
+working base class.</p>
+<p>Interface that describes a type that can self-compare, via a
+compareTo method</p>
+<p>Language feature that permits several functions to have the same
+name.</p>
+<p>Pseudo machine language into which Java source is translated.</p>
+<p>Constructor that requires no arguments</p>
+<p>The square root of 16384</p>
+<p>Class that is designed to hold an elemental type in order to make
+it an object</p>
+<p>Runtime memory area from which <code class="western">new</code>
+gets its storage.</p>
+<p>One location in a hash table</p>
+<p>Interface that defines an object usable to compare other objects</p>
+<p>Any class that holds many values of some other type</p>
+<p>Element chosen as the dividing value in a quicksort partition</p>
+<p>Sorting algorithm that repeated scans unsorted elements to find
+the minimum, and moves it down when found</p>
+<p>Type of binary tree resulting from addition of all values in
+already-sorted order</p>
+<p>Term for a tree node that has no children</p>
+<p>In Numpy and similar libraries, repetition along a dimension to
+extend it from 1 to match the same dimension in another tensor.</p>
+<p>Programming language in which Numpy internals are actually
+implemented</p>
+<h2 class="western"><a name="2-24pts-numpy"></a>2. 24pts Numpy</h2>
+<p>For each of the prints in this numpy code, show the output. Be
+careful to use the right number of braces for any 2-D output.</p>
+<pre class="western"><code class="western">array = np.array([[1,2,3], [4,5,6]])</code>
+<code class="western">print(array.shape)            </code>
+
+<code class="western">array = np.maximum(np.minimum(array, 4), 2)</code>
+<code class="western">print(array)                 </code>
+
+<code class="western">array = np.dot(array, array.T)  # (transpose)</code>
+<code class="western">print(array)                  </code></pre><h2 class="western">
+<a name="3-34pts-stacks"></a>3. 34pts Stacks</h2>
+<h3 class="western"><a name="a-16pts"></a>a. 16pts</h3>
+<p>Fill in this function for LinkStack, following the comments:</p>
+<pre class="western"><code class="western">// Return true iff the top two items on the stack exist (stack has at least two</code>
+<code class="western">// elements) and they have the same data.  Do this with just the single return </code>
+<code class="western">// statement -- a boolean expression not using ?:.  Do NOT call any other stack methods.</code>
+<code class="western">boolean firstTwoSame() {</code>
+
+<code class="western">   </code><code class="western">return ______________________________________________________________;</code>
+<code class="western">}</code></pre><h3 class="western">
+<a name="b-18pts"></a>b. 18pts</h3>
+<p>Fill in this function for LinkStack, following the comments, and
+adding code only at the blank spaces:</p>
+<pre class="western"><code class="western">// Pop the top n values off the stack, or fewer if there are not n values.</code>
+<code class="western">// Importantly, do this without calling any other method, and by a single</code>
+<code class="western">// assignment after the loop (no assignments in the loop).</code>
+<code class="western">void popMultiple(int n) {</code>
+<code class="western">   </code><code class="western">Node temp;</code>
+
+<code class="western">   </code><code class="western">for (temp = head; ________________ &amp;&amp; _______________; temp = temp.next)</code>
+<code class="western">      </code><code class="western">;</code>
+
+<code class="western">   </code><code class="western">_____________________________;</code>
+<code class="western">}</code></pre><h2 class="western">
+<a name="4-76pts-sorting-concepts"></a>4. 76pts Sorting Concepts</h2>
+<h3 class="western"><a name="a-12pts"></a>a. 12pts</h3>
+<p>For an array of 8 elements, what is the maximum number of times
+that insertion sort's <em>inner</em> loop could run (the maximum
+total executions of that loop's body across the entire run)? What
+array contents would cause this? (Hint: the value is &lt; 32))</p>
+<pre class="western">
+</pre><h3 class="western">
+<a name="b-12pts"></a>b. 12pts</h3>
+<p>For an array of 10 elements, what is the maximum number of memory
+<em>write</em> operations into the array that selection sort could do
+and why? What is the minimum number?</p>
+<pre class="western">
+</pre><h3 class="western">
+<a name="c-32pts"></a>c. 32pts</h3>
+<p>Consider the quicksort partition code below, and answer the
+following:</p>
+<p>i. 6pts Why is there no <code class="western">else</code> for the
+<code class="western">if</code>? What variable update(s) must happen
+if the if is false, and how do they occur?</p>
+<pre class="western">
+</pre><p>
+ii. 6pts If all values are the same, say all equal to 42, how will
+the array be divided? Is this OK? Why or why not?</p>
+<pre class="western">
+</pre><p>
+iii. 4pts Would changing <code class="western">&lt; pivot</code> to
+<code class="western">&lt;= pivot</code> help in the situation of
+all-42s? Why or why not?</p>
+<pre class="western"></pre><p>
+<br/>
+<br/>
+
+</p>
+<p>iv. 8pts Write a single expression using the variables in the loop
+that determines whether the low side is smaller than the high side.</p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western">if (                                     ) // If low is smaller</code></pre><p>
+d. 8pts Values equal to pivot can actually be used to balance the
+partition if you place them in whichever side (low or hi) is
+smallest. Without adding any new lines, do this by adding a single
+relatively sophisticated additional logic clause to the <code class="western">if
+(vals[toPlace &lt; pivot])</code> line.</p>
+<pre class="western"><code class="western">   </code><code class="western">endOfLow = lo;       </code>
+<code class="western">   </code><code class="western">pivot = vals[hi-1];     </code>
+
+<code class="western">   </code><code class="western">for (toPlace = lo; toPlace &lt; hi-1; toPlace++)</code>
+<code class="western">      </code><code class="western">if (vals[toPlace] &lt; pivot) {       </code>
+<code class="western">         </code><code class="western">temp = vals[toPlace];</code>
+<code class="western">         </code><code class="western">vals[toPlace] = vals[endOfLow];</code>
+<code class="western">         </code><code class="western">vals[endOfLow] = temp;</code>
+<code class="western">         </code><code class="western">endOfLow++;</code>
+<code class="western">      </code><code class="western">}                         </code>
+
+<code class="western">   </code><code class="western">vals[hi-1] = vals[endOfLow];  // Move pivot to middle</code>
+<code class="western">   </code><code class="western">vals[endOfLow] = pivot;</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">return endOfLow;         </code></pre><h2 class="western">
+<a name="5-48pts-priority-queues-and-merge-concepts"></a>5. 48pts
+Priority queues and merge concepts</h2>
+<p>Below is an implementation of a merge algorith for LinkPQueue.
+This merges the receiver object and the q2 parameter into a single
+queue (with the sorting order determined by <code class="western">cmp</code>).
+</p>
+<p>Fill in the blank lines so it works correctly. Do not add code
+other than for the blank lines.</p>
+<pre class="western"><code class="western">// Merge q2's nodes into the receiver object, leaving q2 empty. Write a</code>
+<code class="western">// loop to directly merge the nodes, don't use recursion, an iterator</code>
+<code class="western">// or any other methods of the class.</code>
+<code class="western">public void merge(LinkPQueue&lt;Item&gt; q2) {</code>
+<code class="western">   </code><code class="western">Node prior = null, nd1 = mHead, nd2 = q2.mHead, nextMerge;</code>
+
+<code class="western">   </code><code class="western">while (nd2 != null) { </code>
+<code class="western">      </code><code class="western">if (nd1 == null) {       // Rest of q2 adds to end of main queue</code>
+<code class="western">         </code><code class="western">nextMerge = nd2;</code>
+<code class="western">         </code><code class="western">__________________;      </code>
+<code class="western">         </code><code class="western">nd2 = ______;             </code>
+<code class="western">                                                            </code>
+<code class="western">      </code><code class="western">} else if (cmp.compare((Item)nd1.data, (Item)nd2.data) &gt; 0) { </code>
+<code class="western">         </code><code class="western">nextMerge = nd1;</code>
+<code class="western">         </code><code class="western">nd1 = nd1.next;</code>
+<code class="western">      </code><code class="western">} else {</code>
+<code class="western">         </code><code class="western">nextMerge = nd2;</code>
+<code class="western">         </code><code class="western">nd2 = nd2.next;</code>
+<code class="western">         </code><code class="western">_____________________________;  </code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">      </code><code class="western">if (prior == null)</code>
+<code class="western">         </code><code class="western">mHead = nextMerge;</code>
+<code class="western">      </code><code class="western">else</code>
+<code class="western">         </code><code class="western">prior.next = nextMerge;</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">___________________________;       </code>
+<code class="western">   </code><code class="western">}</code>
+<code class="western">   </code><code class="western">______________________________;       </code>
+<code class="western">}</code></pre><h2 class="western">
+<a name="6-42pts-complexity"></a>6. 42pts Complexity</h2>
+<h3 class="western"><a name="a-8pts"></a>a. 8pts</h3>
+<p>The selection sort algorithm has what order of complexity? Why?</p>
+<h3 class="western"><a name="b-20pts"></a>b. 20pts</h3>
+<p>If an implementation of insertion sort takes 0.1 second on
+average, sorting an array of 10,000 elements, how long will it take
+on an array of 640,000 elements? Provide an estimate accurate to the
+tenth of a second. Note this can be done <em>in your head</em> if you
+remember powers of 2 and the nature of O(n^2) complexity.</p>
+<h3 class="western"><a name="c-14pts"></a>c. 14pts</h3>
+<p>If a balanced binary tree of 1,000 elements can be searched in 5
+microseconds, how long would you expect a search to take on a
+balanced tree of 1,000,000 elements? Why? Answer the same question if
+both trees are worst-case unbalanced. As before, this can be done
+without a lot of computation.</p>
+<h2 class="western"><a name="7-64pts-java-semantics"></a>7. 64pts
+Java semantics</h2>
+<h3 class="western"><a name="a-10pts"></a>a. 10pts.</h3>
+<p>How many distinct objects (not just references) are created by
+this line of code? How many of them are String objects? <code class="western">String[][]
+arr = new String[5][3]</code></p>
+<h3 class="western"><a name="b-10pts"></a>b. 10pts</h3>
+<p>How many <em>references</em> are created by that same line? How
+many, if any, are null?</p>
+<h3 class="western"><a name="c-8pts"></a>c. 8pts</h3>
+<p>Write a declaraion of a member function &quot;func&quot; that has
+<em>absolutely</em> no parameters passed, hidden or otherwise.</p>
+<h3 class="western"><a name="d-8pts"></a>d. 8pts</h3>
+<p>Why is the following line illegal? (Assume Comparator is correctly
+imported) <code class="western">Comparator cmp = new Comparator()</code></p>
+<h3 class="western"><a name="e-10pts"></a>e. 10pts</h3>
+<p>Say function A calls B, which calls C, which calls D, and then D
+throws an exception that is caught in A. What changes, if any, to the
+RTS must result from throwing that exception?</p>
+<p><br/>
+<br/>
+
+</p>
+<h3 class="western"><a name="f-18pts"></a>f. 18pts</h3>
+<p>Assume this loop compiles. Write an equivalent using just a
+standard while loop, and proper assumptions about vals. Don't worry
+about imports.</p>
+<pre class="western"><code class="western">for (String s: vals)</code>
+<code class="western">   </code><code class="western"># Loop body</code>
+
+
+
+
+</pre><h2 class="western">
+<a name="8-42pts-lphashset"></a>8. 42pts LPHashSet</h2>
+<p>Fill in the blanks, and fix any bugs, in this implementation of
+LPHashSet.check. Don't fix things that aren't broken. You don't need
+to check &quot;steps&quot;, just the main logic.</p>
+<pre class="western"><code class="western">   </code><code class="western">private boolean check() {</code>
+<code class="western">      </code><code class="western">int vCount = 0, nCount = 0, homeIdx;</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">for (int idx = 0; idx &lt; table.length; idx++) {</code>
+<code class="western">         </code><code class="western">if (table[idx] == null)</code>
+<code class="western">            </code><code class="western">nCount++;</code>
+<code class="western">                          </code>
+<code class="western">         </code><code class="western">else if (________________________) { </code>
+<code class="western">            </code><code class="western">vCount++;</code>
+<code class="western">            </code><code class="western">homeIdx = Math.abs(table[idx].hashCode()) % table.length;</code>
+<code class="western">            </code><code class="western">while (______________________) { </code>
+<code class="western">               </code><code class="western">if (table[homeIdx] == null)</code>
+<code class="western">                  </code><code class="western">____________________________ </code>
+<code class="western">               </code><code class="western">homeIdx = (homeIdx + 1) % table.length; </code>
+<code class="western">            </code><code class="western">}</code>
+<code class="western">         </code><code class="western">}</code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">return vCount == valCount || nCount == nullCount;</code>
+<code class="western">   </code><code class="western">}</code></pre><h2 class="western">
+<a name="9-27pts-dfs-project"></a>9. 27pts DFS Project</h2>
+<p>Fill in the missing line in this implementation of getDistance for
+GemState</p>
+<pre class="western"><code class="western"> </code><code class="western">public int getDistance(State st) {</code>
+<code class="western">   </code><code class="western">GemState gState = _________________________   </code>
+<code class="western">   </code><code class="western">int ndx, dist = 0, rDiff, cDiff;</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">for (ndx = 0; ndx &lt; gState.mBoard.length; ndx++) {</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">if (gState.mBoard[ndx] != 0 _____________________________________) {  </code>
+<code class="western">         </code><code class="western">rDiff = (gState.mBoard[ndx]-1) / mColDim - ndx / mColDim;</code>
+<code class="western">              </code>
+<code class="western">         </code><code class="western">cDiff = ___________________________________________________</code>
+<code class="western">         </code><code class="western">dist += (rDiff &gt; 0 ? rDiff : -rDiff) + (cDiff &gt; 0 ? cDiff : -cDiff);</code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">   </code><code class="western">}</code><code class="western">      </code>
+<code class="western">   </code><code class="western">return dist;</code>
+<code class="western">}</code></pre>
+</body>
+</html>

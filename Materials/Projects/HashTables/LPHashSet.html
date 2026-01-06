@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="hashset-linear-probing">HashSet (Linear Probing)</h1>
+<p dir="auto">Build on the LPHashSet examples from class to do the following:</p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">Design a constructor that accepts an initial size for the table.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write a <code>toString</code> method that returns a String giving a diagram of the hash table.  This string has one line per table entry, showing either the table contents and its home bucket index (the one its hash code maps to) in parentheses, <code>null</code>, or <code>wasFull</code>.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write a <code>check</code> function that returns true if every entry is either &quot;null&quot;, or <code>wasFull</code> or has a single value that either hashes to that location, or hashes to an earlier location for which every intervening value is not <code>null</code>.  The number of entries with values must equal <code>valCount</code>.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write and test the <code>remove</code> function. Be sure your test cases where an item can only be found by traversing past a <code>wasFull</code> cell.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write the <code>addAll</code>, <code>containsAll</code> and <code>removeAll</code> functions, to make it easier to rapidly fill, test, and cull the table.  (You may leave both toArray and the retainAll functions empty.)</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write and test the <code>iterator</code> function, which returns an iterator that walks through and returns all nonempty elements of the table, from start to end.  (It's a lot easier than the LLHashSet iterator)</p>
+</li>
+<li dir="auto">
+<p dir="auto">With the use of <code>wasFull</code>, the LPHashSet can reach a point where all of the available spots are <code>wasFull</code> instead of <code>null</code>.  This forces searches to go all the way around the table if the item they seek isn't there (since there is no <code>null</code> to stop their search).  A common solution is to provide a <code>rehash</code> method that rebuilds the entire hash table from scratch, starting with all nulls and reinserting each existing item back into the table, to eliminate all <code>wasFull</code> entries.  The same method can also increase the table size by making the new table larger than the old one.  Write and test the following method for LPHashTable:</p>
+</li>
+</ol>
+<pre><code dir="auto">// Create a new empty hash table, that is &quot;incr&quot; larger than the original one,
+// and rehash all items from the existing hash table into this larger one, discarding
+// the old one
+
+public void rehash(int incr)
+</code></pre>
+<ol start="8" dir="auto">
+<li dir="auto">
+<p dir="auto">It's common practice to avoid filling a linear probing hash table too full, so that at least, say, 1/4 of the entries are <code>null</code>.  Revise LPHashSet.add so that it calls rehash, doubling the size of the table, when this threshold is reached.  To make this efficient, track the number of <code>null</code> entries in the table as you add/remove items.  Rehash when this number falls below 1/4 of the total entries.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write a main function that thoroughly tests all these functions, including frequent calls of <code>check</code> and adding a large number of items so as to trigger a call of <code>rehash</code>.  (I may also supply one by this weekend to augment, but not replace, yours.)</p>
+</li>
+</ol>
+<h2 dir="auto" id="submit">Submit</h2>
+<p dir="auto">First, demo your running program to me.  Be sure you've complied with Java style, as provided in our style sheet, and that you have a solid set of test cases in your main.  Once I OK the program, submit you modified LPHashSet.java file.</p>
+
+</body>
+</html>

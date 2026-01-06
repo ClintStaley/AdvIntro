@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="ds-lecture">DS Lecture</h1>
+<h2 dir="auto" id="day-1">Day 1</h2>
+<h3 dir="auto" id="syllabus">Syllabus</h3>
+<ul dir="auto">
+<li dir="auto">Class interaction!
+<ul dir="auto">
+<li dir="auto">Pay attention</li>
+<li dir="auto">What you figure out, you remember</li>
+<li dir="auto">Tells me how people are doing as we go.</li>
+</ul>
+</li>
+<li dir="auto">Course difficulty
+<ul dir="auto">
+<li dir="auto">50% average, but adjusted to 70-100 scale</li>
+<li dir="auto">Perfect work, with feedback</li>
+<li dir="auto">Support from office hours</li>
+<li dir="auto">Rationale.  Competitive challenge and opportunity with AI</li>
+</ul>
+</li>
+<li dir="auto">Completion of programs for eligibility
+<ul dir="auto">
+<li dir="auto">Necessary, not sufficient, condition</li>
+</ul>
+</li>
+<li dir="auto">Working independently!
+<ul dir="auto">
+<li dir="auto">No AI for coding, except perhaps for EC</li>
+<li dir="auto">Will use in class to see how it works; will require in SE</li>
+</ul>
+</li>
+<li dir="auto">Extra credit opportunities</li>
+</ul>
+<h2 dir="auto" id="overview-of-content">Overview of Content</h2>
+<h3 dir="auto" id="data-structures">&quot;Data Structures&quot;</h3>
+<ul dir="auto">
+<li dir="auto">Data arrangements already important (objects, arrays..)</li>
+<li dir="auto">Much more sophisticated arrangements possible</li>
+<li dir="auto">Data -&gt; algorithms and code, so also more advanced coding</li>
+</ul>
+<h3 dir="auto" id="java">Java</h3>
+<ul dir="auto">
+<li dir="auto">What's it like to learn a second PL?</li>
+<li dir="auto">Language popularity, and keeping up with changes</li>
+<li dir="auto">Language design and history
+<ul dir="auto">
+<li dir="auto">Compilation vs interpretation</li>
+<li dir="auto">Bytecode, java interpreter, jvm</li>
+</ul>
+</li>
+<li dir="auto">Java new ideas vis-a-vis Python:
+<ul dir="auto">
+<li dir="auto">Strong typing</li>
+<li dir="auto">Heavier class declaration and other syntax</li>
+<li dir="auto">Enormous library ecosystem (though Python's pretty good too)</li>
+<li dir="auto">Very good, regular, documentation</li>
+<li dir="auto">Designed for large projects
+<ul dir="auto">
+<li dir="auto">Big Code example:</li>
+<li dir="auto">100 LOC/sqft =&gt; 10,000 sqft or 1250 ft long printout</li>
+<li dir="auto">40 MLoc =&gt; 10 miles of printout...</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto">VSCode IDE</li>
+</ul>
+<h3 dir="auto" id="mmind-example">MMind example</h3>
+<ul dir="auto">
+<li dir="auto">
+<p dir="auto">Run example and review game logic</p>
+</li>
+<li dir="auto">
+<p dir="auto">&quot;boilerplate&quot; for main, statics, etc.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Guess.java</p>
+<ul dir="auto">
+<li dir="auto">Python vs C-syntax (C-syntax is common)
+<ul dir="auto">
+<li dir="auto">curly brace enclosure
+<ul dir="auto">
+<li dir="auto">free form indentation, but style dictates</li>
+<li dir="auto">paren around conditionals</li>
+</ul>
+</li>
+<li dir="auto">variable naming convention: camelCase</li>
+<li dir="auto">do-while loop</li>
+<li dir="auto">for loop</li>
+<li dir="auto">Comment notation</li>
+<li dir="auto">&amp;&amp;, ||, !</li>
+<li dir="auto">method chaining syntax</li>
+<li dir="auto">autoincrement</li>
+<li dir="auto">constructors have same name as class, and you use &quot;new&quot; to make objects</li>
+</ul>
+</li>
+<li dir="auto">Semantic issues
+<ul dir="auto">
+<li dir="auto">strong typing</li>
+<li dir="auto">elemental types: ints, floats, chars, boolean</li>
+<li dir="auto">references to objects</li>
+<li dir="auto">initialization of data</li>
+<li dir="auto">Text data
+<ul dir="auto">
+<li dir="auto">String vs char</li>
+<li dir="auto">Char arithmetic, unicode/ASCII</li>
+<li dir="auto">Character class, and brief intro to static methods</li>
+</ul>
+</li>
+<li dir="auto">System.out.printf, format specifiers</li>
+<li dir="auto">private data and need for accessors</li>
+<li dir="auto">static main method, testing</li>
+<li dir="auto">toString method and its use in printing</li>
+<li dir="auto">Exception handling w/ try/catch</li>
+</ul>
+</li>
+<li dir="auto">Bugs:
+<ul dir="auto">
+<li dir="auto">mispositioning of bad=false</li>
+<li dir="auto">missing final ||lineNdx &lt; line.length()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">Model.java</p>
+<ul dir="auto">
+<li dir="auto">Concepts
+<ul dir="auto">
+<li dir="auto">Random class, seeds, pseudorandom numbers</li>
+<li dir="auto">character codes (ASCII/Unicode) and character arithmetic</li>
+<li dir="auto">arrays in Java (objects, length property, no array till allocated)</li>
+<li dir="auto">record type</li>
+<li dir="auto">nested classes</li>
+<li dir="auto">returning objects (references)</li>
+</ul>
+</li>
+<li dir="auto">Bugs
+<ul dir="auto">
+<li dir="auto">otherUsed[idx] should be otherIdx on line32</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">Game.java</p>
+<ul dir="auto">
+<li dir="auto">Concepts
+<ul dir="auto">
+<li dir="auto">Use of nested class from outside requires scope</li>
+<li dir="auto">record members are private, and accessor is same-named</li>
+</ul>
+</li>
+<li dir="auto">Bugs
+<ul dir="auto">
+<li dir="auto">whichTry logic results in too high a try-count</li>
+</ul>
+</li>
+<li dir="auto">Questions
+<ul dir="auto">
+<li dir="auto">Why is play able to throw IOException??</li>
+<li dir="auto">Does guess point to the same object throughout? Does result?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">Session.java</p>
+<ul dir="auto">
+<li dir="auto">Concepts
+<ul dir="auto">
+<li dir="auto">constant declarations, reasons for this</li>
+<li dir="auto">while-true, break and continue</li>
+<li dir="auto">more elaborate format specifiers</li>
+<li dir="auto">shallow vs deep comparison, copy.</li>
+</ul>
+</li>
+<li dir="auto">Bugs
+<ul dir="auto">
+<li dir="auto">Error check of combo possibilities LLM actually wrote this one.(Discuss powers, etc.)</li>
+<li dir="auto">Shallow string comparison for response.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">Libraries and packages</p>
+<ul dir="auto">
+<li dir="auto">packages and import</li>
+<li dir="auto">use of JavaDoc, drilling down to class</li>
+<li dir="auto">reading constructors, methods, etc.</li>
+<li dir="auto">String class example: immutability, concatenation</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">MMind.java</p>
+<ul dir="auto">
+<li dir="auto">Most of logic in classes/objects.</li>
+<li dir="auto">Need one no-object starting point</li>
+</ul>
+</li>
+</ul>
+<h3 dir="auto" id="review-of-oo-design">Review of OO Design</h3>
+<ul dir="auto">
+<li dir="auto">Class design basics
+<ul dir="auto">
+<li dir="auto">Grouping data and associated code, to help think about it as a unit</li>
+<li dir="auto">Design by choosing natural groupings:
+<ul dir="auto">
+<li dir="auto">Data, and functions</li>
+<li dir="auto">Example of Guess, Model, Game, Session</li>
+<li dir="auto">Methods for each, and data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 dir="auto" id="stacks">Stacks</h3>
+<h4 dir="auto" id="stacks1">Stacks1</h4>
+<ul dir="auto">
+<li dir="auto">Main concept of a stack</li>
+<li dir="auto">walk through push, in particular</li>
+<li dir="auto">receiver object</li>
+<li dir="auto">Constructors
+<ul dir="auto">
+<li dir="auto">copy cons</li>
+<li dir="auto">method overloading</li>
+</ul>
+</li>
+<li dir="auto">variadic push as side-demo</li>
+<li dir="auto">Questions
+<ul dir="auto">
+<li dir="auto">fill in final line of isOn correctly</li>
+<li dir="auto">make copy constructor more efficient.</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto" id="stacks2">Stacks2</h4>
+<ul dir="auto">
+<li dir="auto">LinkStack implementation
+<ul dir="auto">
+<li dir="auto">Nested class</li>
+<li dir="auto">Nodes and linked lists</li>
+<li dir="auto">Basic ops push, top, pop, etc.</li>
+<li dir="auto">Copy constructor concept</li>
+<li dir="auto">Bugs: temp = stk.head.next in copy cons; test for temp != null in valAt</li>
+</ul>
+</li>
+<li dir="auto">CountingArrStack and implementation inheritance
+<ul dir="auto">
+<li dir="auto">Add methods and data</li>
+<li dir="auto">Layer cake model of object.</li>
+<li dir="auto">Constructor &quot;super&quot; call.</li>
+<li dir="auto">meaning of &quot;protected&quot; qualifier in base</li>
+<li dir="auto">ISA relationship</li>
+<li dir="auto">Inheritance terminology: super/sub class base/derived class, override,</li>
+</ul>
+</li>
+<li dir="auto">CountingLinkStack
+<ul dir="auto">
+<li dir="auto">New data example</li>
+<li dir="auto">Overriding methods</li>
+</ul>
+</li>
+<li dir="auto">Stacks2 main
+<ul dir="auto">
+<li dir="auto">Declaration of stk1, stk2.</li>
+<li dir="auto">Change Stack to ArrStack or LinkStack in that declaration to illustrate ISA.</li>
+</ul>
+</li>
+<li dir="auto">Interface
+<ul dir="auto">
+<li dir="auto">Abstract methods</li>
+<li dir="auto">Defines &quot;stackness&quot; -- ISA holds for all Stack implementations</li>
+<li dir="auto">superclass without implementation, only obligation.</li>
+</ul>
+</li>
+<li dir="auto">Polymorphism concept
+<ul dir="auto">
+<li dir="auto">What &quot;push&quot; gets called on line 32?  How can it tell?</li>
+<li dir="auto">If I made up a third stack type and worked it into the main, what then?</li>
+<li dir="auto">Object &quot;knows&quot; what type it is, even if reference does not.</li>
+<li dir="auto">THE big idea in OO.  Polymorphism, dynamic &quot;binding&quot;, runtime binding</li>
+<li dir="auto">(Alternative, which requires a known type of reference, is &quot;static&quot; binding
+or &quot;compile time&quot; binding)</li>
+<li dir="auto">Allows one to create code that addresses only the interface, but works
+with any implementation thereof, even ones not yet created.</li>
+</ul>
+</li>
+<li dir="auto">Interface inheritance vs implementation inheritance.
+<ul dir="auto">
+<li dir="auto">CountingLinkStack from LinkStack is implementation inheritance -- extend
+a working base class with new/overridden methods and new data</li>
+<li dir="auto">LinkStack/ArrStack from Stack is interface inheritance -- define abstract
+base class and rely on polymorphism.  This is 95% use case because it
+permits <em>type flexibility</em></li>
+</ul>
+</li>
+<li dir="auto">Aside on default implementations e.g. of variadic push (added in Java 8)
+<ul dir="auto">
+<li dir="auto">Could that push method include, e.g., a reference to &quot;data&quot; array?</li>
+<li dir="auto">Must rely only on methods in the interface, and thus remains abstract in effect</li>
+<li dir="auto">Lets you add new methods to an interface without demanding implementation
+in all implementing classes, as long as a default generic implementation is possible.</li>
+</ul>
+</li>
+<li dir="auto">Object ultimate base class
+<ul dir="auto">
+<li dir="auto">Can have more than one superinterface but only one superclass</li>
+<li dir="auto">Look up what it offers</li>
+<li dir="auto">What types of object can an Object reference refer to?</li>
+<li dir="auto">What about elementals?</li>
+</ul>
+</li>
+<li dir="auto">Questions and bugs
+<ul dir="auto">
+<li dir="auto">Can LinkedList copy constructor be shallow?  What new methods would make
+this impossible?</li>
+<li dir="auto">Implement toString properly for both stacks</li>
+<li dir="auto">CountingLinkStack copy cons lacks copy of numVals.</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto" id="stacks3">Stacks3</h4>
+<ul dir="auto">
+<li dir="auto">Container classes and generics</li>
+<li dir="auto">Just make it a Stack of Objects??
+<ul dir="auto">
+<li dir="auto">What does that look like?  Try Strings.</li>
+<li dir="auto">Need to downcast top return, and nothing prevents pushing other types.</li>
+</ul>
+</li>
+<li dir="auto">Generic notation
+<ul dir="auto">
+<li dir="auto">Does not change underlying container, which is of Objects.</li>
+<li dir="auto">Enforces in/out type rules via the reference itself.</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
