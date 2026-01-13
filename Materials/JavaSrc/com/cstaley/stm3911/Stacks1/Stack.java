@@ -28,7 +28,7 @@ public class Stack {
          System.arraycopy(data, 0, temp, 0, count);
          this.data = temp;
       }
-      this.data[count++] = val;
+      data[count++] = val;
    }
 
    public int top() {
