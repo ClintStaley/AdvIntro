@@ -7,8 +7,9 @@ public class ArrPQueue<Item> extends ArrQueue<Item> {
    
    public ArrPQueue(Comparator<Item> cmp) {mCmp = cmp;}
       
-   public void add(Item val) {
+   public ArrPQueue<Item> add(Item val) {
       // Make absolutely no calls of arraycopy or new.
+      return this;
    }
 }
 

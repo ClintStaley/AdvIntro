@@ -9,10 +9,14 @@ public class Game {
    private int numChars;
    private char maxChar;
    
-   public Game(int numChars, char maxChar, Random rnd) {
+   public Game(String modelType, int numChars, char maxChar, Random rnd) {
       this.numChars = numChars;
       this.maxChar = maxChar;
-      model = new Model(numChars, maxChar, rnd);
+      if (modelType.equals("Simple")) {
+         model = new SimpleModel(numChars, maxChar, rnd);
+      } else if (modelType.equals("Counting")) {
+         model = new CountingModel(numChars, maxChar, rnd);
+      }
    }
    
    // Play the game, and return number of attempts required to win
@@ -22,12 +26,13 @@ public class Game {
       int whichTry = 0;
       
       guess = new Guess(numChars, maxChar);
-      System.out.printf("\nStarting game...\nPattern is %s\n", model);
+      System.out.printf("\nStarting game...\n");
 
       do {
          whichTry++;
+         System.out.printf("%s\n", model);
          guess.read(whichTry, in);
-         result = model.findMatches(guess);
+         result = model.getMatches(guess);
          System.out.printf("%d exact and %d inexact\n", result.exact(),
             result.inexact());
       } while (result.exact() < numChars);
@@ -38,7 +43,7 @@ public class Game {
    // Main method test the Game class by playing a game with 4-char, max F
    // and printing the number of attempts required to win.
    public static void main(String[] args) {
-      Game game = new Game(4, 'F', new Random(0));
+      Game game = new Game("Simple", 4, 'F', new Random(0));
 
       try {
          Scanner in = new Scanner(System.in);

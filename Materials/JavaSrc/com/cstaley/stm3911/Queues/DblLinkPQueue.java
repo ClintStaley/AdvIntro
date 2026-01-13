@@ -3,10 +3,11 @@ package com.cstaley.stm3911.Queues;
 import java.util.*;
 
 public class DblLinkPQueue<Item> extends DblLinkQueue<Item> {
-   protected Comparator<Item> mCmp;
+   protected Comparator<Object> mCmp;
    
-   public DblLinkPQueue(Comparator<Item> cmp) {mCmp = cmp;}
+   public DblLinkPQueue(Comparator<Item> cmp) {mCmp = (Comparator<Object>)cmp;}
 
-   public void add(Item val) {
+   public DblLinkPQueue<Item> add(Item val) {
+      return this;
    }
 }

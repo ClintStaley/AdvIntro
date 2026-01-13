@@ -12,7 +12,7 @@ public class LinkPQueue<Item> extends LinkQueue<Item> {
    }
    
    @Override
-   public void add(Object val) {
+   public LinkPQueue<Item> add(Item val) {
       Node prior;
       Node temp = new Node(val, null);
 
@@ -23,23 +23,24 @@ public class LinkPQueue<Item> extends LinkQueue<Item> {
          mHead = temp;
       }
       else {
-         for (prior = mHead;
-            prior.next != null && cmp.compare(prior.next.data, temp.data) > 0;
+         for (prior = mHead; prior != null 
+            && cmp.compare(prior.data, temp.data) > 0;
             prior = prior.next)
             ;
          if (prior.next == null)
             prior.next = mTail = temp;
          else {
             temp.next = prior.next;
-            prior.next= temp;
+            prior.next = temp;
          }
       }
+      return this;
    }
 
    // Merge the items in the array into the queue, maintaining the priority order
    // Do this without calling any other methods of the class, and without 
    // restarting from head for each item.
-   public void mergeArray(Object[] items) {
+   public void mergeArray(Item[] items) {
       // Presort items in descending order, greatest first
       Arrays.sort(items, cmp.reversed());  // Assume this works; no need to fix
       
@@ -48,7 +49,7 @@ public class LinkPQueue<Item> extends LinkQueue<Item> {
       Node last = null;
 
       for (int idx = 0; idx < items.length; idx++) {
-         Object item = items[idx];
+         Item item = items[idx];
 
          // Deal with possibility that first item goes at the head.  Note that
          // only the first item can go at the head; later items must go after
@@ -70,11 +71,12 @@ public class LinkPQueue<Item> extends LinkQueue<Item> {
       }
 
       // Update tail if necessary
-     
+      if (                                 )
+         mTail =   
    }
 
    public static void main(String[] args) {
-      LinkPQueue<Integer> pq = new LinkPQueue<Integer>(Integer::compareTo);
+      LinkPQueue<Integer> pq = new LinkPQueue<>(Integer::compareTo);
       Integer[] initItems = {3, 5, 7, 9, 2, 4, 6, 8};
       Integer[] moreItems = {1, 10, 0};
       pq.mergeArray(initItems);

@@ -12,6 +12,7 @@ public class Session {
    private Random rnd;
    private char maxChar;
    private int numChars;
+   private String modelType;
    private Scanner input;
 
    public Session() {
@@ -19,8 +20,10 @@ public class Session {
       int seed;
       
       while (true) {
-         System.out.print("Enter max letter, number of letters and seed: ");
+         System.out.print("Enter model type (Simple or Counting), max letter, " 
+            + "number of letters and seed: ");
          try {
+            modelType = input.next();
             maxChar = input.next().charAt(0);
             numChars = input.nextInt();
             seed = input.nextInt();
@@ -36,6 +39,9 @@ public class Session {
             else if (Math.pow(maxChar - 'A' + 1, numChars) > cMaxCombos) {
                System.out.printf("More than %d possible combinations\n", 
                   cMaxCombos);
+            }
+            else if (!modelType.equals("Simple") && !modelType.equals("Counting")) {
+               System.out.printf("Model type must be Simple or Counting\n");
             }
             else
                break;
@@ -55,7 +61,7 @@ public class Session {
       
       do {
          games++;
-         game = new Game(numChars, maxChar, rnd);
+         game = new Game(modelType, numChars, maxChar, rnd);
          attempts = game.play(input);
          allAttempts += attempts;
 

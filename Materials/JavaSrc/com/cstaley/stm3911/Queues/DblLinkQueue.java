@@ -19,43 +19,27 @@ public class DblLinkQueue<Item> implements Queue<Item> {
 
    protected Node mHead;
    
-   // Check that queue is in a "good" state -- all pointers linked properly
-   protected boolean isGood() {
-      Node toCheck;
-      
-      if (mHead == null)
-         return false;
-      
-      toCheck = mHead; 
-      do { 
-         if (toCheck.prev.next != toCheck || toCheck.next.prev != toCheck)
-            return false;
-         toCheck = toCheck.next;
-      } while (toCheck != mHead);
-      
-      return true;
-   }
-   
    public DblLinkQueue() {
       mHead = new Node();
-      mHead.next = mHead;
-      mHead.prev = mHead.next;
+      mHead.next = mHead;         // Simplify these two lines into one
+      mHead.prev = mHead.next;  
    }
    
    public DblLinkQueue(DblLinkQueue<Item> src) {
-      // Make new queue a copy of src.
+      // Make new queue a copy of src without calling other methods.
    }
 
    @Override
-   public void add(Item data) {
+   public DblLinkQueue<Item> add(Item data) {
       Node toAdd = new Node(data, mHead.prev, mHead);
       mHead.prev.next = toAdd;
       mHead.prev = toAdd;
+      return this;
    }    
    
    @Override
    public boolean isEmpty() {
-      return mHead == mHead.next;  // return mHead.prev == mHead.next;
+      return mHead.prev == mHead.next;
    }
    
    @Override
@@ -81,6 +65,23 @@ public class DblLinkQueue<Item> implements Queue<Item> {
    @Override
    public Iterator<Item> iterator() {
       return null;
+   }
+
+   // Check that queue is in a "good" state -- all pointers linked properly
+   protected boolean isGood() {
+      Node toCheck;
+
+      if (mHead == null)
+         return false;
+
+      toCheck = mHead;
+      do {
+         if (toCheck.prev.next != toCheck || toCheck.next.prev != toCheck)
+            return false;
+         toCheck = toCheck.next;
+      } while (toCheck != mHead);
+
+      return true;
    }
 
    public static void main(String[] args) {

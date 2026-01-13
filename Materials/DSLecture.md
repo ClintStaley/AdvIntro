@@ -73,7 +73,8 @@
       * Exception handling w/ try/catch
     * Bugs: 
       * mispositioning of bad=false
-      * missing final ||lineNdx < line.length()
+      * missing final || lineNdx < line.length()
+      * failure to update ch in while loop that skips whitespace in guess
   * Model.java
     * Concepts
       * Random class, seeds, pseudorandom numbers
@@ -122,12 +123,21 @@
        * Methods for each, and data
 
 ### Stacks
+   * Main concept of a stack, LIFO
+   * Allows multiple implementations, not just arrays, as we'll see.
+   * LIFO order useful in many contexts
+   
 #### Stacks1
-   * Main concept of a stack
    * walk through push, in particular
    * receiver object
+   * Constructors
+      * copy cons
+      * method overloading
    * variadic push as side-demo
-   * Questions (fill in final line of isOn)
+   * Questions 
+      * fill in final line of isOn correctly
+      * make copy constructor more efficient.
+
 #### Stacks2
    * LinkStack implementation
       * Nested class
@@ -177,6 +187,11 @@
      * Look up what it offers
      * What types of object can an Object reference refer to?
      * What about elementals?
+   * Questions and bugs
+      * Can LinkedList copy constructor be shallow?  What new methods would make
+      this impossible?
+      * Implement toString properly for both stacks
+      * CountingLinkStack copy cons lacks copy of numVals.
 
 #### Stacks3
   * Container classes and generics
@@ -186,5 +201,48 @@
   * Generic notation
      * Does not change underlying container, which is of Objects.
      * Enforces in/out type rules via the reference itself.
-  * 
 
+### Queues
+  * General queue idea, FIFO
+
+#### LinkQueue and LinkPQueue
+  * Discuss how to add at end.  O(n) without a tail pointer
+  * Review getFront and remove.  
+     * Ignore modCount for now
+  * Questions
+    * Do we need a mTail update in remove?
+    * Queue new functions in review session
+  * Bugs: Missing mTail = temp in add
+  * static constructor
+    * Static method has no receiver object
+    * variadic we've seen before.  This one creates a Queue
+  * Iterator concept
+    * Use of iterator directly in main
+    * Design of iterator class
+    * nonstatic inner classes
+    * Iterator interface
+    * Iterable interface and foreach loops (tie to Python)
+    * Bugs: Order of assignments in next()
+  * Can we modify the queue during iteration?
+    * mod counting and error check
+  * Priority queue
+    * General idea
+    * How to compare for priority: larger, smaller??
+    * Comparator interface and compare rules
+    * Subclass overriding add
+    * Bugs: prior => prior.next (x2) in for-loop of add
+
+#### DblLinkQueue and DblLinkPQueue
+  * Discuss doubly linked list.  Advantages, etc.
+  * Circularity and dummy head node
+  * Add method
+  * Question: can we use a while loop in isGood?
+  * Bugs: Incorrect test in isEmpty
+
+#### ArrQueue and ArrPQueue
+  * Idea of queue in array, head, tail(disclusive)
+  * Walkthrough of wraparound process
+     * How to do wraparound logic?
+  * Testing of full vs empty, need for empty flag
+  * Resizing when full...
+  

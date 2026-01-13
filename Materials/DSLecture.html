@@ -128,7 +128,8 @@
 <li dir="auto">Bugs:
 <ul dir="auto">
 <li dir="auto">mispositioning of bad=false</li>
-<li dir="auto">missing final ||lineNdx &lt; line.length()</li>
+<li dir="auto">missing final || lineNdx &lt; line.length()</li>
+<li dir="auto">failure to update ch in while loop that skips whitespace in guess</li>
 </ul>
 </li>
 </ul>
@@ -227,9 +228,13 @@
 </li>
 </ul>
 <h3 dir="auto" id="stacks">Stacks</h3>
+<ul dir="auto">
+<li dir="auto">Main concept of a stack, LIFO</li>
+<li dir="auto">Allows multiple implementations, not just arrays, as we'll see.</li>
+<li dir="auto">LIFO order useful in many contexts</li>
+</ul>
 <h4 dir="auto" id="stacks1">Stacks1</h4>
 <ul dir="auto">
-<li dir="auto">Main concept of a stack</li>
 <li dir="auto">walk through push, in particular</li>
 <li dir="auto">receiver object</li>
 <li dir="auto">Constructors
@@ -347,6 +352,75 @@ this impossible?</li>
 <li dir="auto">Enforces in/out type rules via the reference itself.</li>
 </ul>
 </li>
+</ul>
+<h3 dir="auto" id="queues">Queues</h3>
+<ul dir="auto">
+<li dir="auto">General queue idea, FIFO</li>
+</ul>
+<h4 dir="auto" id="linkqueue-and-linkpqueue">LinkQueue and LinkPQueue</h4>
+<ul dir="auto">
+<li dir="auto">Discuss how to add at end.  O(n) without a tail pointer</li>
+<li dir="auto">Review getFront and remove.
+<ul dir="auto">
+<li dir="auto">Ignore modCount for now</li>
+</ul>
+</li>
+<li dir="auto">Questions
+<ul dir="auto">
+<li dir="auto">Do we need a mTail update in remove?</li>
+<li dir="auto">Queue new functions in review session</li>
+</ul>
+</li>
+<li dir="auto">Bugs: Missing mTail = temp in add</li>
+<li dir="auto">static constructor
+<ul dir="auto">
+<li dir="auto">Static method has no receiver object</li>
+<li dir="auto">variadic we've seen before.  This one creates a Queue</li>
+</ul>
+</li>
+<li dir="auto">Iterator concept
+<ul dir="auto">
+<li dir="auto">Use of iterator directly in main</li>
+<li dir="auto">Design of iterator class</li>
+<li dir="auto">nonstatic inner classes</li>
+<li dir="auto">Iterator interface</li>
+<li dir="auto">Iterable interface and foreach loops (tie to Python)</li>
+<li dir="auto">Bugs: Order of assignments in next()</li>
+</ul>
+</li>
+<li dir="auto">Can we modify the queue during iteration?
+<ul dir="auto">
+<li dir="auto">mod counting and error check</li>
+</ul>
+</li>
+<li dir="auto">Priority queue
+<ul dir="auto">
+<li dir="auto">General idea</li>
+<li dir="auto">How to compare for priority: larger, smaller??</li>
+<li dir="auto">Comparator interface and compare rules</li>
+<li dir="auto">Subclass overriding add</li>
+<li dir="auto">Bugs: prior =&gt; prior.next (x2) in for-loop of add</li>
+</ul>
+</li>
+</ul>
+<h4 dir="auto" id="dbllinkqueue-and-dbllinkpqueue">DblLinkQueue and DblLinkPQueue</h4>
+<ul dir="auto">
+<li dir="auto">Discuss doubly linked list.  Advantages, etc.</li>
+<li dir="auto">Circularity and dummy head node</li>
+<li dir="auto">Add method</li>
+<li dir="auto">Question: can we use a while loop in isGood?</li>
+<li dir="auto">Bugs: Incorrect test in isEmpty</li>
+</ul>
+<h4 dir="auto" id="arrqueue-and-arrpqueue">ArrQueue and ArrPQueue</h4>
+<ul dir="auto">
+<li dir="auto">Idea of queue in array, head, tail(disclusive)</li>
+<li dir="auto">Walkthrough of wraparound process
+<ul dir="auto">
+<li dir="auto">How to do wraparound logic?</li>
+</ul>
+</li>
+<li dir="auto">Testing of full vs empty, need for empty flag</li>
+<li dir="auto">Resizing when full...</li>
 </ul>
 
 </body>

@@ -12,7 +12,24 @@ public class Guess {
       this.maxChar = maxChar;
    }
    
-   // Read a guess from the user, checking for valid input.
+   /**
+    * Constructor for testing: creates a Guess from a String pattern.
+    * @param patternStr the pattern string (must match expected length and maxChar)
+    * @param maxChar the maximum valid character
+    */
+   public Guess(String patternStr, char maxChar) {
+      this.maxChar = maxChar;
+      pattern = patternStr.toUpperCase().trim().toCharArray();
+      
+      // Validate length and characters
+      for (char ch : pattern) {
+         if (ch < 'A' || ch > maxChar) {
+            assert false : "Invalid character '" + ch 
+               + "' in pattern. Must be between A and " + maxChar;
+         }
+      }
+   }   
+
    public void read(int attempt, Scanner in) throws IOException {
       int index, lineNdx;
       char ch;

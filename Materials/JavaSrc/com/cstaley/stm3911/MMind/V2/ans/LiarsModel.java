@@ -19,6 +19,11 @@ public class LiarsModel {
       this.viablePatterns = generateAllPatterns(length, maxChar);
    }
    
+   /*
+    * Generate all patterns in alphabetical order (AAAA, AAAB, AAAC, ...).
+    * By processing positions from most significant to least significant,
+    * patterns are naturally generated in lexicographic order.
+    */
    private static List<String> generateAllPatterns(int length, char maxChar) {
       List<String> result = new ArrayList<>();
       int base = maxChar - 'A' + 1;
@@ -27,7 +32,9 @@ public class LiarsModel {
       for (int i = 0; i < total; i++) {
          char[] pattern = new char[length];
          int value = i;
-         for (int pos = 0; pos < length; pos++) {
+         // Process from most significant position to least significant
+         // This ensures alphabetical ordering: AAAA, AAAB, AAAC, ...
+         for (int pos = length - 1; pos >= 0; pos--) {
             pattern[pos] = (char)('A' + value % base);
             value /= base;
          }
@@ -59,6 +66,12 @@ public class LiarsModel {
       return new Matches(exact, inexact);
    }
    
+   /*
+    * When multiple response groups have the same maximum count, we break ties
+    * deterministically: first by smallest number of exact matches, then by
+    * smallest number of inexact matches. This ordering offers the least
+    * "psychological" information while maintaining determinism.
+    */
    public Matches findMatches(Guess toCheck) {
       Map<Matches, List<String>> groups = new HashMap<>();
       
@@ -70,19 +83,52 @@ public class LiarsModel {
       Matches bestResponse = null;
       int maxCount = 0;
       for (var entry : groups.entrySet()) {
-         if (entry.getValue().size() > maxCount) {
-            maxCount = entry.getValue().size();
-            bestResponse = entry.getKey();
+         int count = entry.getValue().size();
+         Matches response = entry.getKey();
+         
+         // Prefer response with larger count
+         // On ties, prefer smallest exact matches, then smallest inexact matches
+         if (count > maxCount || 
+            (count == maxCount && bestResponse != null && 
+            (response.exact() < bestResponse.exact() ||
+            (response.exact() == bestResponse.exact() && 
+            response.inexact() < bestResponse.inexact())))) {
+            
+            maxCount = count;
+            bestResponse = response;
          }
       }
       
       viablePatterns = groups.get(bestResponse);
+      // Patterns remain in alphabetical order since:
+      // 1. We iterate viablePatterns in order (which is alphabetical)
+      // 2. We add patterns to map lists in that same order
+      // 3. So the map value lists maintain alphabetical order
+      // No sorting needed!
+      
       return bestResponse;
    }
    
-   public int viableCount() { return viablePatterns.size(); }
+   public int getViableCount() { return viablePatterns.size(); }
    
+   /*
+    * Returns the alphabetically lowest pattern from the remaining viable set.
+    * The viable patterns list is maintained in alphabetical order throughout
+    * (generated in order, and order is preserved when filtering), so this
+    * always returns the lexicographically smallest pattern (the first one).
+    */
+   public String getAlphabeticallyLowest() {
+      if (viablePatterns.isEmpty())
+         return null;
+      // List is already in alphabetical order, no sorting needed
+      return viablePatterns.get(0);
+   }
+   
+   // Return number of viable patterns, and the alphabetically lowest pattern
    public String toString() {
-      return viablePatterns.size() == 1 ? viablePatterns.get(0) : "?";
+      if (viablePatterns.isEmpty())
+         return "0 viable patterns";
+      // List is already in alphabetical order, no sorting needed
+      return viablePatterns.size() + " viable patterns: " + viablePatterns.get(0);
    }
 }
