@@ -187,10 +187,11 @@
      * Look up what it offers
      * What types of object can an Object reference refer to?
      * What about elementals?
-   * Questions and bugs
+   * Questions
       * Can LinkedList copy constructor be shallow?  What new methods would make
       this impossible?
       * Implement toString properly for both stacks
+   * Bugs
       * CountingLinkStack copy cons lacks copy of numVals.
 
 #### Stacks3

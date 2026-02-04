@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2026-01-22T09:33:35.583000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Java LLM Study 3</h1>
+<h2 lang="zxx" class="western"><font face="Arial, sans-serif"><font size="4" style="font-size: 16pt"><b>Enums
+and JavaDocs</b></font></font></h2>
+<p lang="zxx">1. How Java represents enumerations, now this compares
+with other languages, and what sort of sophisticated things can be
+done with Java enumerations.  Why are deep comparisons unneeded with
+enum objects?</p>
+<p lang="zxx">2. How to use JavaDocs, including drilling down from
+package to package contents to an individual class or interface, and
+the standard layout of a JavaDoc for a class or interface. 
+Particular analysis, as an example, of String vs StringBuilder
+classes -- their design and methods as described in their JavaDocs.</p>
+<h2 lang="zxx" class="western">Turning In</h2>
+<p lang="zxx">As a final prompt, enter the following verbatim and get
+Claude's response. Then create a share link for the Claude
+conversation, and submit this alone as the response to the homework
+&quot;essay&quot; question.</p>
+<p lang="zxx">----------------------------</p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">From
+the perspective of a professor or TA of an undergraduate course in
+data structures, review this entire conversation, and evaluate it,
+giving me frank feedback:</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">Specifically,
+for each of the topics listed below, topic by topic, evaluate these
+points:</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">A.
+Did we engage in a deep conversation with thoughtful followup
+questions from me? Were there significant followup questions I might
+have asked but missed?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">B.
+When there was relevant code, did we work together to improve or add
+to that code?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">C.
+Did I summarize the topic accurately?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">D.
+Did I get a quiz from you on the topic, and how did I do on that
+quiz?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">E.
+Did I catch you in an error, or find a way to notably improve or
+refine your responses?</font></font></font></p>
+<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">F.
+Give our conversation a 5-</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">level</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">
+score using this rubric:</span></span></span></span></font></font></font></span></p>
+<ol type="a">
+	<li><p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">(Lowest)
+	The conversation was largely a glorified websearch.  </span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">There
+	were few if any followup questions, quiz was nonexistent or I got
+	most answers wrong, and my summaries were inaccurate or missing.</span></span></span></span></font></font></font></span></p>
+	<li><p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">I
+	at least made some effort to follow up, summarize, and answered some
+	quiz questions correctly, but it was still below average.</span></span></span></span></font></font></font></span></p>
+	<li><p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">I
+	followed up, summarized and got most quiz questions correct, but
+	missed interesting followup possibilities and some of the quiz
+	questions</span></span></span></span></font></font></font></span></p>
+	<li><p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">I
+	did all that would reasonably be expected in following up on
+	questions, summarized well, and got almost all quiz questions right.</span></span></span></span></font></font></font></span></p>
+	<li><p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">(Highest)
+	I did all that is expected under </span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">d</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">,
+	and I also either caught and corrected an error on your part, or
+	offered a significant improvement or refinement to a point you made.
+	 If we had been two people talking, you would say that you also
+	learned something from me.</span></span></span></span></font></font></font></span></p>
+	<p lang="zxx" align="left" style="orphans: 2; widows: 2"></p>
+</ol>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">List
+of topics:</font></font></font></p>
+<p lang="zxx">1. How Java represents enumerations, now this compares
+with other languages, and what sort of sophisticated things can be
+done with Java enumerations.  Why are deep comparisons unneeded with
+enum objects?</p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">2.
+How to use JavaDocs, including drilling down from package to package
+contents to an individual class or interface, and the standard layout
+of a JavaDoc for a class or interface.  Particular analysis, as an
+example, of String vs StringBuilder classes -- their design and
+methods as described in their JavaDocs.</font></font></font></p>
+<p lang="zxx" align="left" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+</p>
+</body>
+</html>

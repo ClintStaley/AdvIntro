@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="stacks-project">Stacks Project</h1>
+<p dir="auto">Starting with the Stacks3 course examples</p>
+<h3 dir="auto" id="bronze-level">Bronze Level</h3>
+<p dir="auto">Implement toString, for both LinkStack and ArrStack, producing a String of form [ val1, val2, val3 ] with top of stack at the <em>right</em>.  Do not do any String concatenation for this (no use of + on Strings).  Use StringBuilder.  Test your method by printing out, via System.out.println(stk) calls, both empty and filled ArrStacks and LinkStacks.</p>
+<h4 dir="auto" id="submitting-bronze">Submitting Bronze</h4>
+<p dir="auto">Submit LinkStack.java, ArrStack.java, with test mains that exercise the printing of the stacks as specified.  Submit a snapshot of your test mains (both of them) running correctly.</p>
+<h3 dir="auto" id="silver-level">Silver Level</h3>
+<p dir="auto">In text, certain pairs of letters are expected to balance one another, e.g. (), [], {}, or even &quot;&quot; (where the opening and closing character are the same).  We consider a string to be properly formed if all such characters pairs are properly closed and nested.  For instance, given the pairs above, these are balanced strings:</p>
+<pre><code dir="auto">{a(bc[d]&quot;e&quot;)}f
+[{(a)}b]
+</code></pre>
+<p dir="auto">But these are not, either due to missing openers/closers or due to improper nesting</p>
+<pre><code dir="auto">&quot;xx&gt;
+([{a]})
+{{test}xxx
+</code></pre>
+<p dir="auto">You can readily determine if a string is properly formed by maintaining a stack of opening symbols thus far seen, and matching closing symbols by ensuring the top of stack is the opening &quot;partner&quot; and popping off the opener if so.  Nesting requires a LIFO ordering, so the stack is the right data structure to organize this.  For instance, analysis of the string <code>[{(a)}b]</code> would push [, {, and ( as they're seen, and then pop each back off as their partner ), }, and ] symobls occur (in reverse order for proper nesting).  Non-paired characters like a and b are simply ignored.</p>
+<p dir="auto">Using this approach, write a Java class Balance.java which has a function isBalanced:</p>
+<pre><code dir="auto">boolean isBalanced(String text, char[][] pairs)
+</code></pre>
+<p dir="auto">where <code>pairs</code> is an nx2 array of characters, with each row representing a balanced pair, e.g. <code>[['(',')'], ['{','}'], ... ]</code>.  Return true iff <code>text</code> is properly balanced for the character-pairs in <code>pairs</code>.  Be sure this works even if test is 0 length.</p>
+<p dir="auto">Balance.java has a main program that reads in a single line comprising pairs, followed by as many lines as desired, each giving a string to check for balance.  It sets up the needed 2D array of chars, and calls isBalanced, outputting each of the test lines followed by &quot;balanced&quot; or &quot;imbalanced&quot;.  Here's an example:</p>
+<pre><code dir="auto">Input:
+
+(){}[]&quot;&quot;''**
+(Hello[{**}])
+*&quot;test*&quot;
+(([a]b)c))
+
+Output:
+(Hello[{**}]) balanced
+*&quot;test*&quot; imbalanced
+(([a]b)c))``` imbalanced
+</code></pre>
+<h4 dir="auto" id="submitting-silver">Submitting Silver</h4>
+<p dir="auto">Create a pair of test files, each with different balanced-pair sets, and with a set of test strings that include balanced and imbalanced strings, that make use of every character pair at some point, and that include missing openers, missing closers, extra final closers, and balanced but improperly nested strings.  Submit five files:</p>
+<pre><code dir="auto">Balance.java
+Test1.in
+Test1.out
+Test2.in
+Test2.out
+</code></pre>
+
+</body>
+</html>

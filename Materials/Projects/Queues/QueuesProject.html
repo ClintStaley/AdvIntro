@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
+	<meta name="changed" content="2026-02-01T23:02:19.049000000"/>
+	<meta name="Info 1" content=""/>
+	<meta name="Info 2" content=""/>
+	<meta name="Info 3" content=""/>
+	<meta name="Info 4" content=""/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		h1 { margin-bottom: 0.08in }
+		h1.western { so-language: zxx }
+		h1.cjk { font-family: "Andale Sans UI"; so-language: zxx }
+		h1.ctl { font-family: "Tahoma"; so-language: zxx }
+		p { margin-bottom: 0.08in; so-language: zxx }
+		h2.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx }
+		h2.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx }
+		h2.ctl { font-family: "Mangal"; font-size: 16pt; so-language: zxx }
+		h3.cjk { font-family: "NSimSun" }
+		h3.ctl { font-family: "Arial" }
+		code.cjk { font-family: "NSimSun", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
+Queues and Dynamic Data Structures</h1>
+<h1 lang="zxx" class="western">Bronze</h1>
+<h2 lang="zxx" class="western"><a name="linkqueue"></a>LinkQueue</h2>
+<h3 class="western"><a name="add-new-methods"></a>Add New Methods</h3>
+<p lang="zxx">Use the LinkQueue class included with this assignment.
+This has the code we wrote in class.</p>
+<p lang="zxx">Complete the supplied copy constructor method so you
+can make a new LinkQueue that is a copy of another. Note the
+instructional comment in the Java file. 
+</p>
+<p lang="zxx">Complete the addToEnd method, following the comments in
+the Java file. In particular do not use any loop for this. Just
+change a few pointers.</p>
+<p lang="zxx">Complete the undoAdd method, again following the
+comments.</p>
+<h3 class="western"><a name="test-the-methods"></a>Test the methods</h3>
+<p lang="zxx">Use the supplied test code in the main function, and
+add a few lines of your own in the same spirit. Hand in your
+LinkQueue.java and a text-file &quot;Output.txt&quot; showing the
+output of a test run on your methods.</p>
+<h2 lang="zxx" class="western"><a name="dbllinkqueue"></a>DblLinkQueue</h2>
+<h3 class="western"><a name="add-new-methods2"></a>Add New Methods</h3>
+<p lang="zxx"><span lang="zxx">Complete the following&nbsp;</span><strong><span lang="zxx">one
+at a time</span></strong><span lang="zxx">:</span></p>
+<ul>
+	<li><p lang="zxx">copy constructor</p>
+	<li><p lang="zxx">remove</p>
+	<li><p lang="zxx">undoAdd</p>
+	<li><p lang="zxx">addToEnd</p>
+</ul>
+<p lang="zxx">As you write each one, do the following:</p>
+<ul>
+	<li><p lang="zxx">Respect the comments regarding number of
+	lines/pointer-changes.</p>
+	<li><p lang="zxx">Draw diagrams! You'll need them to keep track of
+	what you're doing.</p>
+	<li><p lang="zxx">Consider empty-queue cases, but only add
+	if-statements when you have to. (You may find you almost never need
+	to, which is the main advantage of a dummy node.)</p>
+	<li><p lang="zxx"><span lang="zxx">After you do each routine, write
+	at least one call of it in main(), followed by&nbsp;</span><code class="western"><span lang="zxx">isGood</span></code><span lang="zxx">&nbsp;calls
+	on any queues affected by it. The provided commented-out main will
+	give you source examples to work from, though you'll need to
+	incorporate them into your main selectively as you build your code.</span></p>
+</ul>
+<p lang="zxx"><span lang="zxx">Writing and checking these&nbsp;</span><strong><span lang="zxx">one
+at a time</span></strong><span lang="zxx">&nbsp;will give you step by
+step progress, and incremental debugging challenges. Don't write it
+all at once.</span></p>
+<h3 class="western"><a name="create-an-iterator-class"></a>Create an
+Iterator class</h3>
+<p lang="zxx">Next do these steps, again checking with test code
+(e.g. using a foreach loop on a DblLinkQueue):</p>
+<ul>
+	<li><p lang="zxx"><span lang="zxx">Write an iterator class that
+	has&nbsp;</span><code class="western"><span lang="zxx">hasNext</span></code><span lang="zxx">&nbsp;and&nbsp;</span><code class="western"><span lang="zxx">next</span></code><span lang="zxx">.
+	For now, leave&nbsp;</span><code class="western"><span lang="zxx">remove</span></code><span lang="zxx">&nbsp;unimplemented,
+	as we did for LinkQueue.</span></p>
+	<li><p lang="zxx">Write a copy constructor.</p>
+	<li><p lang="zxx"><span lang="zxx">Now, add a valid&nbsp;</span><code class="western"><span lang="zxx">remove</span></code><span lang="zxx">,
+	noting that per docs,&nbsp;</span><code class="western"><span lang="zxx">remove</span></code><span lang="zxx">&nbsp;removes
+	the most recently returned item from&nbsp;</span><code class="western"><span lang="zxx">next</span></code><span lang="zxx">.
+	Iterate over a queue and do some removes. Check the result
+	with&nbsp;</span><code class="western"><span lang="zxx">isGood</span></code><span lang="zxx">.</span></p>
+</ul>
+<h3 class="western"><a name="test-the-methods2"></a>Test the methods</h3>
+<p lang="zxx">Comment out your test main (but leave it so you can
+submit it) and uncomment the main I supplied. Be sure everything
+still works correctly under my main program.</p>
+<h1 lang="zxx" class="western">Silver</h1>
+<h2 lang="zxx" class="western"><a name="arrqueue"></a>ArrQueue</h2>
+<p lang="zxx">Use the ArrQueue class from class for this assignemnt.</p>
+<h3 class="western"><a name="write-add-and-remove"></a>Write add and
+remove</h3>
+<p lang="zxx">Start by writing the add and remove methods, so you can
+test the queue. You'll need to take the mEmpty flag into account in
+add, and set it in both add and remove under the right circumstances.
+If the array is already full and you're adding a new value, resize
+the array, and also undo any wrapping when you copy the old data into
+the new larger new array. Write tests that wrap the queue, that cause
+a resizing, and that ultimately empty the queue.</p>
+<h3 class="western"><a name="write-getsize"></a>Write getSize</h3>
+<p lang="zxx">This method must cover several cases: the normal case
+where mHead &lt;= mTail, the wrapped case, the empty case, and the
+totally-full case (note that both of these latter cases have mHead ==
+mTail). Add getSize calls to your earlier tests to be sure you get
+the right size in all cases.</p>
+<h3 class="western"><a name="write-equals"></a>Write equals</h3>
+<p lang="zxx">Checking equality of two ArrQueues is tricky since they
+may have the same contents, but not the same mHead/mTail values. As
+long as they have the same contents, in the same order, they are
+equal. And, the contents themselves (which are Object references,
+recall) must be deep-equal compared, not just shallow equal.</p>
+<h3 class="western">Add new methods</h3>
+<p lang="zxx">Add the undoAdd, and addToEnd methods. Use *no loops*
+for either of these. 
+</p>
+<h3 class="western"><a name="write-the-arriterator-class-and-the-iterator-function"></a>
+Write the ArrIterator class, and the iterator function</h3>
+<p lang="zxx">The ArrIterator must work even for ArrQueues that are
+wrapped around, and it must distinguish between cases where the queue
+is empty and mHead == mTail, and where it is full and mHead == mTail.</p>
+<p lang="zxx">When you write ArrIterator:</p>
+<ul>
+	<li><p lang="zxx"><span lang="zxx">Write an iterator class that
+	has&nbsp;</span><code class="western"><span lang="zxx">hasNext</span></code><span lang="zxx">&nbsp;and&nbsp;</span><code class="western"><span lang="zxx">next</span></code></p>
+	<li><p lang="zxx">Test next and hasNext, using a foreach loop in the
+	main.</p>
+	<li><p lang="zxx"><span lang="zxx">Now, add a valid&nbsp;</span><code class="western"><span lang="zxx">remove</span></code><span lang="zxx">,
+	noting that per docs,&nbsp;</span><code class="western"><span lang="zxx">remove</span></code><span lang="zxx">&nbsp;removes
+	the most recently returned item from&nbsp;</span><code class="western"><span lang="zxx">next</span></code><span lang="zxx">.
+	Iterate over a queue and do some removes.</span></p>
+</ul>
+<h3 class="western"><a name="test-the-methods3"></a>Test the methods</h3>
+<p lang="zxx">Copy the test main from DblLinkQueue, and add good test
+cases of your own, especially for the equals method.</p>
+<h2 lang="zxx" class="western">Turning In Silver</h2>
+<p lang="zxx">Submit your ArrQueue.java file and an Output.txt file
+showing the results of your test main run.</p>
+<h1 lang="zxx" class="western">Gold</h1>
+<p lang="zxx">We've avoided the remove method of the iterator for
+LinkQueue and ArrQueue, because it's rather challenging. For this
+phase, write and test those two methods. And, *neither of them may
+use loops*. For LinkQueue you'll find it necessary to track both your
+current Node and the prior one. For ArrQueue, you'll need to use
+arraycopy, and deal with several different cases of wraparound.</p>
+<p lang="zxx">Add to the test main, in both ArrQueue.java and
+LinkQueue.java, a thorough test of iterator remove. This must
+include:</p>
+<ul>
+	<li><p lang="zxx">Testing of remove on the very first element (after
+	the first next call)</p>
+	<li><p lang="zxx">Repeated next/remove call-pairs. 
+	</p>
+	<li><p lang="zxx">Properly functioning next calls after both removal
+	of first item and also after repeat next/removes</p>
+	<li><p lang="zxx">One case of starting the iterator, and removing
+	*all* elements by repeated next/remove calls</p>
+	<li><p lang="zxx">Tests of a remove before the first next call, and
+	of two removes in sequence, each one wrapped in a try/catch to
+	ensure you properly throw IllegalStateException (see the JavaDocs if
+	you need to) in each instance.</p>
+</ul>
+<h2 lang="zxx" class="western">Turning in Gold</h2>
+<p lang="zxx">Submit your LinkQueue.java and ArrQueue.java files with
+the remove implementation and the well-written main code you added,
+with a comment marking it for easy review by me or a CM. Submit also
+LinkOutput.txt and ArrOutput.txt showing your main code working
+properly.</p>
+<h1 lang="zxx" class="western">Platinum</h1>
+<p lang="zxx">Research via LLM, or in a review session I'll offer,
+how a <b>binary heap</b> <span style="font-weight: normal">works.
+Implement in HeapPQueue.java a priority queue as a binary heap, using
+block-allocation of space, embedding the binary &quot;tree&quot; into
+an array for efficiency. This implementation must include a working
+iterator, though it may return items in the order they appear in the
+array, not in strictly sorted order. The iterator must include a
+remove method, which removes whatever element was just returned, even
+from the middle of the tree, while maintaining the full-tree
+property. </span>
+</p>
+<p lang="zxx"><span style="font-weight: normal">Your test main for
+this must include:</span></p>
+<ul>
+	<li><p lang="zxx"><span style="font-weight: normal">Creation of a
+	priority queue of one million elements, and demonstration that you
+	can add/remove random elements to this at a rate of 100,000
+	pairs/second</span></p>
+	<li><p lang="zxx"><span style="font-weight: normal">Iteration on
+	that large queue, and removal of every-other element as you do so. 
+	Demonstration that the remaining queue operates correctly after.</span></p>
+</ul>
+<h2 lang="zxx" class="western">Turning in Platinum</h2>
+<p lang="zxx">Demo your code for me, including showing a run of your
+test main. Once I approve it, submit your HeapPQueue.java file.</p>
+<p lang="zxx"><br/>
+<br/>
+
+</p>
+<p lang="zxx"><br/>
+<br/>
+
+</p>
+</body>
+</html>

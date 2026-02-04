@@ -5,7 +5,7 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
 	<meta name="created" content="2009-04-16T11:32:02.640000000"/>
-	<meta name="changed" content="2026-01-02T23:05:19.283000000"/>
+	<meta name="changed" content="2026-01-14T21:44:10.259000000"/>
 	<meta name="Info 1" content=""/>
 	<meta name="Info 2" content=""/>
 	<meta name="Info 3" content=""/>
@@ -23,95 +23,64 @@
 	</style>
 </head>
 <body lang="en-US" dir="ltr"><h1 lang="zxx" class="western" align="center">
-Java LLM Study</h1>
+Java LLM Study 2</h1>
 <h2 lang="zxx" class="western"><font face="Arial, sans-serif"><font size="4" style="font-size: 16pt"><b>MMind.java</b></font></font></h2>
-<p lang="zxx">We reviewed much of MMind.java in class, and I leave
-the rest to you to study using Claude and the JavaDocs, with possible
-quiz on this material. 
-</p>
-<p lang="zxx">Here are the topics to study.  If you already fully
-understand any of them, you may conduct your LLM session by telling
-the LLM how the feature works, in detail, and getting its
-confirmation, essentially starting with the summarizing step of our
-standard LLM study process.  But, even then, have it give you a quiz,
-and engage deeply enough in a conversation with it to find some fault
-or improvement in what it says to you.  
-</p>
-<p lang="zxx">1. MMind.java starts with a package statement.  What
-*is* a Java package, and why are they useful? Why did I preface the
-package name with com.cstaley, instead of just, say using &quot;package
-MMind&quot;?   
-</p>
-<p lang="zxx">2. How does &quot;import&quot; relate to packages? 
-Does &quot;import&quot; include any code from other files into the
-Java file in which it appears, like it does in Python? If so, what
-kind of code? If not, then what does it do exactly? 
-</p>
-<p lang="zxx">3. What does &quot;final&quot; do, and are there other
-languages with a similar feature? What keyword do they typically use
-if so?</p>
-<p lang="zxx">4. What is &quot;method chaining&quot;? What line of
-code in MMind.java exemplifies this syntax?</p>
-<p lang="zxx">5. What is &quot;Character&quot;? An object? a package?
-a class? What methods does it supply?</p>
-<p lang="zxx">6. What's up with line 64? If I write bad = bad ||
-test, what is the effect? Why do we preface the right side with &quot;bad
-||&quot;?  What happens if I omit the !bad on line 59?</p>
-<p lang="zxx">7. What code should be filled in on line 68? (Do this
-w/o an LLM's help, but get LLM confirmation when you're done)</p>
-<p lang="zxx">8. How do the ++ and -- operators work in Java?  On
-line 60, what does the nested lineNdx++ do? if lineNdx == 2, for
-instance, will charAt receive argument 2 or 3? 
-</p>
+<p lang="zxx">1. What is &quot;Character&quot;? An object? a package?
+a class? What methods and constants does it supply?  Same question
+for the related classes Integer, Float, Double, Short.</p>
+<p lang="zxx">2. We allocate new objects from the runtime heap, and
+when they're no longer accessible, a &quot;garbage collector&quot;
+marks their space as reusable?  But, how does this actually work? 
+How does the GC &quot;know&quot; that an object is free?  How is the
+runtime heap organized to track available and free memory?  Delve
+into how the allocation and garbage collection system works in Java.</p>
 <h2 lang="zxx" class="western">Turning In</h2>
 <p lang="zxx">As a final prompt, enter the following verbatim and get
-Claude's response.  Submit the entire Claude conversation, as a share
-link.</p>
+Claude's response.   Then create a share link for the Claude
+conversation, and submit this alone as the response to the homework
+&quot;essay&quot; question.</p>
 <p lang="zxx">----------------------------</p>
-<p lang="zxx" align="left"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">From
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">From
 the perspective of a professor or TA of an undergraduate course in
 data structures, review this entire conversation, and evaluate it,
-giving me frank feedback:</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">Specifically,
+giving me frank feedback:</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">Specifically,
 for each of the topics listed below, topic by topic, evaluate these
-points:</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">A.
+points:</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">A.
 Did we engage in a deep conversation with thoughtful followup
 questions from me? Were there significant followup questions I might
-have asked but missed?</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">B.
+have asked but missed?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">B.
 When there was relevant code, did we work together to improve or add
-to that code?</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">C.
-Did I summarize the topic accurately?</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">D.
+to that code?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">C.
+Did I summarize the topic accurately?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">D.
 Did I get a quiz from you on the topic, and how did I do on that
-quiz?</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">E.
+quiz?</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">E.
 Did I at any point catch you in a significant error which you had to
-correct, or find a way to notably improve or refine your responses?</span></span></span></span></font></font></font></span></p>
+correct, or find a way to notably improve or refine your responses?</font></font></font></p>
 <p lang="zxx" align="left" style="orphans: 2; widows: 2"><br/>
 <br/>
 
 </p>
 <p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">List
 of topics:</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><br/>
-<br/>
-
-</p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">1.
-Packages and package naming</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">2.
-Import statements</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">3.
-Final keyword in Java and other languages</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">4.
-Method chaining</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">5.
-Character class and related classes</span></span></span></span></font></font></font></span></p>
-<p lang="zxx" align="left" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span lang="zxx"><span style="font-style: normal"><span style="font-weight: normal">6.
-++ operator</span></span></span></span></font></font></font></span></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">1.
+Java wrapper classes Character, Integer, Float, Double, and Short.</font></font></font></p>
+<p lang="zxx" align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Times New Roman, serif"><font size="4" style="font-size: 14pt">2.
+The operation of the runtime heap and garbage collector in Java.</font></font></font></p>
 <p lang="zxx" align="left" style="orphans: 2; widows: 2"><br/>
 <br/>
 
