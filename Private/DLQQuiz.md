@@ -11,12 +11,12 @@ and repairing one other bug.
 public void addToEnd(DblLinkQueue<Item> src) {
    mHead.prev.next = src.mHead.next;
 
-   src.mHead_______________ = mHead.prev;   8pts .next.prev
+   src.mHead_______________ = mHead.prev;   
    
-   mHead.prev = src.mHead;                  8pts .prev;
+   mHead.prev = src.mHead;                
 
-   mHead.prev.next = _______;               4pts mHead
+   mHead.prev.next = _______;              
    
-   src.mHead.next = src.mHead.prev = ___________;  4pts src.mHead
+   src.mHead.next = src.mHead.prev = ___________;  
 }
    

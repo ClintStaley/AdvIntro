@@ -247,3 +247,30 @@
   * Testing of full vs empty, need for empty flag
   * Resizing when full...
   
+### Recursion
+  * Functions calling themselves
+  * Example of fct function
+     * Imagine as independent calls
+#### RTS
+  * Tracking locals and parameters
+  * Follow main -> f1 -> f2 example calls
+  * Tie into recursion
+#### Fib
+  * Fibonacci numbers, numbered from 0, starting with 0 1 (1 2 3 5 8)
+  * Follow call tree from Fib(5), noting repeats
+  * Discuss RTS depth
+  * Ask about Fib(100)
+     * RTS depth
+     * Run time
+     * Could do by hand!
+#### Memoizing
+  * Static variable holding table, with -1s initially
+  * Fill in on each call
+  * Ask them to write the if-statement wrappers and pre-return save
+#### Choose function
+  * 
+  
+### Sorting and BinSearch
+
+#### Binsearch
+  * 
