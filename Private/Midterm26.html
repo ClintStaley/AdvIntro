@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.3.5.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2026-02-07T16:17:46.328000000"/>
+	<meta name="" content=""/>
+	<style type="text/css">
+		h2.cjk { font-family: "NSimSun" }
+		h2.ctl { font-family: "Arial" }
+		pre.cjk { font-family: "NSimSun", monospace }
+		code.cjk { font-family: "NSimSun", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h1 align="center">Data Structures
+Midterm</h1>
+<p align="right">Name_________________________________________________</p>
+<h2 class="western"><a name="1-48pts-vocabulary"></a>1 48pts
+Vocabulary</h2>
+<p>Give terms to match each of these definitions. Correct spelling is
+required.</p>
+<p>Pseudo machine language into which Java source is translated.</p>
+<p>Program that runs that pseudo machine code</p>
+<p>The class from which yours is derived (2 terms)</p>
+<p>Constructor that requires no arguments</p>
+<p>Methods that every class has (give two examples)</p>
+<p>Number of elements in a 4x8x32x16 4-D array</p>
+<p>Cube root of 32768</p>
+<p>Class that is designed to hold an elemental type in order to make
+it an object</p>
+<p>Type of comparison meant to be implemented via a call of <code class="western">equals</code></p>
+<p>Memory area from which <code class="western">new</code> gets its
+storage.</p>
+<p>Object referred to by <code class="western">this</code> which is
+is implicitly passed as a parameter</p>
+<p>Alternate term for &quot;derived class&quot;</p>
+<p>Program that translates from a language like Java to a machine
+language</p>
+<p>Program that directly reads and executes source code, like Python</p>
+<p>Four letter abbreviation for the order of adding and removing for
+a queue.</p>
+<p><em>Three</em> different terms for the property that ensures that
+regardless of whether the <code class="western">stk</code> pointer
+below points to a LinkStack, ArrStack, or any other kind of Stack,
+the correct <code class="western">push</code> function will get
+called.</p>
+<pre class="western"><code class="western">Stack stk = // Code that creates some kind of Stack object</code>
+<code class="western">stk.push(42)</code></pre><p>
+Type relationship between Stack and LinkStack that permits the
+assignment: <code class="western"><font size="2" style="font-size: 10pt">Stack
+stk = new LinkStack()</font></code></p>
+<p>Type of casting that is done in this assignment: <code class="western"><font size="2" style="font-size: 10pt">Stack
+stk = new LinkStack()</font></code></p>
+<p>Process by which an elemental type is automatically placed into a
+wrapper object when needed.</p>
+<p>Garbage collection phase in which unmarked objects are freed to
+reuse their storage</p>
+<h2 class="western"><a name="2-42pts-java-semantics"></a>2 42pts Java
+semantics</h2>
+<p><b>a. 8pts </b>What does the following code output? Explain why.
+How would you change it to make a deep comparison instead?</p>
+<pre class="western"><code class="western">String s1 = &quot;Test&quot;, s2 = &quot;Test&quot;;</code>
+
+<code class="western">if (s1 == s2)</code>
+<code class="western">   </code><code class="western">System.out.println(&quot;Equal&quot;);</code>
+<code class="western">else</code>
+<code class="western">   </code><code class="western">System.out.println(&quot;Not equal&quot;);</code></pre><p>
+<b>b. 10pts</b> What is the result of this line of code, and why?
+(Assume import java.util.Iterator has been done.)</p>
+<p><code class="western">Iterator itr = new Iterator()</code></p>
+<p><b>c. 6pts </b>Here is a call of the stack isEmpty function. How
+many parameters does it actually have, and why?</p>
+<p>boolean isEmpty() { return mHead == null; }</p>
+<p><b>d. 18pts</b> Fill in just the blank lines to create a version
+of CountingLinkStack that refuses to add any duplicate values to the
+stack, silently ignoring push calls that would add a duplicate:</p>
+<pre class="western"><code class="western">class NoDupsLinkStack ___________________________________ {</code>
+<code class="western">   </code><code class="western">public NoDupsLinkStack() {</code>
+
+<code class="western">      </code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">   </code><code class="western">public void **2pts push(int val) {</code>
+
+<code class="western">      </code><code class="western">if (_______________________)**</code>
+
+<code class="western">         </code><code class="western">________________________</code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">}</code></pre><h2 class="western">
+<br/>
+<br/>
+
+</h2>
+<h2 class="western" style="page-break-before: always"><a name="3-40pts-java-coding-doubly-linked-lists"></a>
+3. 40pts Java Coding: Doubly Linked Lists</h2>
+<p>The following new method for DblLinkQueue swaps the first and
+second nodes (the two to the &quot;right&quot; of the dummy node in
+our diagrams) so that they trade positions in the queue. It throws an
+exception if there are fewer than two nodes aside from the dummy.
+Fill in the missing parts so it works as specified. Note that <code class="western">second</code>
+points to the second node to the right of the dummy. Make no other
+changes.</p>
+<pre class="western"><code class="western">public void swapFirstTwo() {</code>
+<code class="western">   </code><code class="western">// Point to second node in queue</code>
+<code class="western">   </code><code class="western">Node second = ____________________;    </code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">if (mHead.next == mHead ________________________)  // At least two nodes...</code>
+<code class="western">      </code><code class="western">throw new NullPointerException();</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">second.next.prev = __________________________;    </code>
+<code class="western">   </code><code class="western">second.prev = mHead;</code>
+<code class="western">   </code><code class="western">mHead.next.prev = _________________;             </code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">___________________________________   </code>
+<code class="western">   </code><code class="western">second.next = mHead.next;</code>
+<code class="western">   </code><code class="western">mHead.next = second;</code>
+<code class="western">}</code></pre><h2 class="western">
+<a name="4-33pts-java-coding-linkqueue"></a>4. 33pts Java Coding:
+LinkQueue</h2>
+<p>Fix this implementation of undoAdd for LinkQueue by adding the
+blank lines, and repairing one other bug. Do not change anything
+that's not broken.</p>
+<pre class="western"><code class="western">public void undoAdd() {</code>
+<code class="western">   </code><code class="western">Node temp;</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">if (mHead == null)</code>
+<code class="western">      </code><code class="western">throw new NullPointerException();</code>
+<code class="western">   </code>
+<code class="western">   </code><code class="western">if (mHead == ________) </code>
+
+<code class="western">      </code><code class="western">________________________; </code>
+<code class="western">   </code><code class="western">else {</code>
+<code class="western">      </code><code class="western">for (temp = mHead; temp[.next] (8pts) != mTail; temp = temp.next)</code>
+<code class="western">         </code><code class="western">;</code>
+<code class="western">      </code><code class="western">mTail = temp;</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">___________________   </code>
+
+<code class="western">      </code><code class="western">___________________  </code>
+<code class="western">   </code><code class="western">}</code>
+<code class="western">}</code></pre><h2 class="western">
+<br/>
+<br/>
+
+</h2>
+<h2 class="western" style="page-break-before: always"><a name="5-33pts-java-coding-isbalanced"></a>
+5. 33pts Java Coding: isBalanced</h2>
+<p>Fix this implementation of the isBalanced function from Stacks
+Silver project, by filling in the 4 blanks, and fixing 2 other bugs.
+Do not change anything that's not broken.</p>
+<pre class="western"><code class="western">   </code><code class="western">// Return Character representing the closing match for c, or null if c has</code>
+<code class="western">   </code><code class="western">// no match.</code>
+<code class="western">   </code><code class="western">private static Character getMatch(char c, char[][] pairs) {</code>
+<code class="western">      </code><code class="western">for (char[] pair : pairs) {</code>
+<code class="western">         </code><code class="western">if (pair[0] == c) {</code>
+<code class="western">            </code><code class="western">return pair[1];</code>
+<code class="western">         </code><code class="western">}</code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">      </code><code class="western">return null;</code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">   </code><code class="western">// Return true if c is a &quot;closing&quot; character e.g. })].</code>
+<code class="western">   </code><code class="western">private static boolean isCloser(char c, char[][] pairs) {</code>
+<code class="western">      </code><code class="western">for (char[] pair : pairs) {</code>
+<code class="western">         </code><code class="western">if (pair[0] == c) {          </code>
+<code class="western">            </code><code class="western">return true;</code>
+<code class="western">         </code><code class="western">}</code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">      </code>
+<code class="western">      </code><code class="western">_________________;             </code>
+<code class="western">   </code><code class="western">}</code>
+
+<code class="western">   </code><code class="western">// Return true iff text is properly balanced for the character-pairs in </code>
+<code class="western">   </code><code class="western">// pairs, an nx2 array with each row representing a balanced pair,  </code>
+<code class="western">   </code><code class="western">// e.g. [['(',')'], ['{','}'], ... ].</code>
+<code class="western">   </code><code class="western">static boolean isBalanced(String text, char[][] pairs) {</code>
+<code class="western">      </code><code class="western">LinkStack&lt;Character&gt; stack = new LinkStack&lt;Character&gt;();</code>
+<code class="western">      </code><code class="western">for (char c : text.toCharArray()) {</code>
+<code class="western">         </code><code class="western">Character partner = getMatch(c, pairs);</code>
+<code class="western">         </code><code class="western">if (partner != null) {</code>
+<code class="western">            </code><code class="western">stack.push(partner); </code>
+<code class="western">         </code><code class="western">} </code>
+<code class="western">         </code><code class="western">else {                  </code>
+<code class="western">            </code><code class="western">if (isCloser(c, pairs) || (___________________ || stack.pop() != c)) </code>
+<code class="western">               </code>
+<code class="western">               </code><code class="western">____________________  </code>
+<code class="western">         </code><code class="western">}</code>
+<code class="western">      </code><code class="western">}</code>
+<code class="western">      </code><code class="western">return ______________________   </code>
+<code class="western">   </code><code class="western">}</code></pre>
+</body>
+</html>

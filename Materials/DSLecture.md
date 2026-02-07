@@ -268,9 +268,22 @@
   * Fill in on each call
   * Ask them to write the if-statement wrappers and pre-return save
 #### Choose function
-  * 
+  * Discuss decomposition of task into subtasks, w specific choose example
+  * Binary base cases
   
 ### Sorting and BinSearch
 
 #### Binsearch
+  * Bug: should be lo = mid+1
+
+#### InsertSort
+  * Inefficiency: ndx = lo+1
+  * Stability.  <= should be < for stability
+
+#### QuickSort
+  * Walk through partition
   * 
+### Hash Tables
+
+#### LLHashSet
+  * Bug: Check needs to see if list.isEmpty() and return fals ahead of doing list.size

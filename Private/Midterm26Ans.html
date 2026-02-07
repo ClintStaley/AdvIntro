@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="data-structures-midterm">Data Structures Midterm</h1>
+<p dir="auto">Name_________________________________________________</p>
+<h2 dir="auto" id="1-48pts-vocabulary">1 48pts Vocabulary</h2>
+<p dir="auto">Give terms to match each of these definitions.  Correct spelling is required.</p>
+<p dir="auto">Pseudo machine language into which Java source is translated. <strong>bytecode</strong></p>
+<p dir="auto">Program that runs that pseudo machine code <strong>virtual machine (JVM) or interpreter</strong></p>
+<p dir="auto">The class from which yours is derived (2 terms) <strong>superclass, base class</strong></p>
+<p dir="auto">Constructor that requires no arguments <strong>default constructor</strong></p>
+<p dir="auto">Methods that every class has (give two examples) <strong>equals, toString, clone, wait, getClass</strong></p>
+<p dir="auto">Number of elements in a 4x8x32x16 4-D array <strong>16384</strong></p>
+<p dir="auto">Cube root of 32768 <strong>32</strong></p>
+<p dir="auto">Class that is designed to hold an elemental type in order to make it an object <strong>wrapper class</strong></p>
+<p dir="auto">Type of comparison meant to be implemented via a call of <code>equals</code> <strong>deep comparison</strong></p>
+<p dir="auto">Memory area from which <code>new</code> gets its storage.  <strong>runtime heap</strong></p>
+<p dir="auto">Object referred to by <code>this</code> which is is implicitly passed as a parameter <strong>receiver object</strong></p>
+<p dir="auto">Alternate term for &quot;derived class&quot; <strong>subclass</strong></p>
+<p dir="auto">Program that translates from a language like Java to a machine language <strong>compiler</strong></p>
+<p dir="auto">Program that directly reads and executes source code, like Python  <strong>interpreter</strong></p>
+<p dir="auto">Four letter abbreviation for the order of adding and removing for a queue.  <strong>FIFO</strong></p>
+<p dir="auto"><em>Three</em> different terms for the property that ensures that regardless of whether the <code>stk</code> pointer below points to a LinkStack, ArrStack, or any other kind of Stack, the correct <code>push</code> function will get called. <strong>dynamic binding, runtime binding, polymorphism</strong></p>
+<pre><code dir="auto">Stack stk = // Code that creates some kind of Stack object
+stk.push(42)
+</code></pre>
+<p dir="auto">Type relationship between Stack and LinkStack that permits this assignment: <code>Stack stk = new LinkStack()</code> <strong>ISA</strong></p>
+<p dir="auto">Type of casting that is done in this assignment: <code>Stack stk = new LinkStack()</code> <strong>upcasting</strong></p>
+<p dir="auto">Process by which an elemental type is automatically placed into a wrapper object when needed. <strong>boxing</strong></p>
+<p dir="auto">Garbage collection phase in which unmarked objects are freed to reuse their storage <strong>sweep</strong></p>
+<h2 dir="auto" id="2-44pts-java-semantics">2 44pts Java semantics</h2>
+<p dir="auto">a. 8pts What does the following code output?  Explain why.  How would you change it to make a deep comparison instead? <strong>Prints Not equal (req)  Shallow comparison, reference comparison 4pts call s1.equals(s2) 4pts</strong></p>
+<pre><code dir="auto">String s1 = &quot;Test&quot;, s2 = &quot;Test&quot;;
+
+if (s1 == s2)
+   System.out.println(&quot;Equal&quot;);
+else
+   System.out.println(&quot;Not equal&quot;);
+</code></pre>
+<p dir="auto">b. 10pts What is the result of this line of code, and why?  (Assume import java.util.Iterator has been done.) <strong>Error 2pts  Cannot create an Iterator 4pts  Iterator is just an interface 4pts</strong></p>
+<p dir="auto"><code>Iterator itr = new Iterator()</code></p>
+<p dir="auto">c. 6pts
+Here is a call of the stack isEmpty function.  How many parameters does it actually have, and why? <strong>6pts Has &quot;this&quot; parameter</strong></p>
+<p dir="auto">boolean isEmpty() {
+return mHead == null;
+}</p>
+<p dir="auto">d. 18pts Fill in just the blank lines to create a version of CountingLinkStack that refuses to add any duplicate values to the stack, silently ignoring push calls that would add a duplicate:</p>
+<pre><code dir="auto">class NoDupsLinkStack **4pts extends CountingLinkStack** {
+   public NoDupsLinkStack() {
+
+      **4pts super()**
+   }
+
+   public void **2pts push(int val) {
+
+      if **4pts (!IsOn(val))**
+
+         **4pts super.push(val)**
+   }
+
+}
+</code></pre>
+<h2 dir="auto" id="3-40pts-java-coding-doubly-linked-lists">3. 40pts Java Coding: Doubly Linked Lists</h2>
+<p dir="auto">The following new method for DblLinkQueue swaps the first and second nodes (the two to the &quot;right&quot; of the dummy node in our diagrams) so that they trade positions in the queue.  It throws an exception if there are fewer than two nodes aside from the dummy.  Fill in the missing parts so it works as specified.  Note that <code>second</code> points to the second node to the right of the dummy.  Make no other changes.</p>
+<pre><code dir="auto">public void swapFirstTwo() {
+   // Point to second node in queue
+   Node second = ____________________;   **5pts mHead.next.next**  
+   
+   ** || 4pts second == mHead 4pts  or just .prev 8pts**
+   if (mHead.next == mHead ________________________)  // At least two nodes...
+      throw new NullPointerException();
+   
+   second.next.prev = __________________________;    **8pts mHead.next**
+   second.prev = mHead;
+   mHead.next.prev = _________________;              **8pts second**
+   
+   ___________________________________   ** 7pts mHead.next.next = 7pts second.next;**
+   second.next = mHead.next;
+   mHead.next = second;
+}
+</code></pre>
+<h2 dir="auto" id="4-33pts-java-coding-linkqueue">4. 33pts Java Coding: LinkQueue</h2>
+<p dir="auto">Fix this implementation of undoAdd for LinkQueue by adding the blank lines, and
+repairing one other bug.  Do not change anything that's not broken.</p>
+<pre><code dir="auto">public void undoAdd() {
+   Node temp;
+   
+   if (mHead == null)
+      throw new NullPointerException();
+   
+   if (mHead == ________)  mTail (5pts)
+
+      ________________________; mHead (4pts) = mTail (2pt) = null (2pt);
+   else {
+      for (temp = mHead; temp[.next] (8pts) != mTail; temp = temp.next)
+         ;
+      mTail = temp;
+      
+      ___________________   mtail.next = null or temp.next = null;   6pts
+
+      ___________________   size--; 4pts
+   }
+}
+
+## 5. 33pts Java Coding: isBalanced
+Fix this implementation of the isBalanced function from Stacks Silver project,
+by filling in the 4 blanks, and fixing 2 other bugs. Do not change anything 
+that's not broken.
+</code></pre>
+<p dir="auto">// Return Character representing the closing match for c, or null if no match.
+private static Character getMatch(char c, char[][] pairs) {
+for (char[] pair : pairs) {
+if (pair[0] == c) {
+return pair[1];
+}
+}
+return null;
+}</p>
+<p dir="auto">// Return true if c is a &quot;closing&quot; character e.g. })].
+private static boolean isCloser(char c, char[][] pairs) {
+for (char[] pair : pairs) {
+if (pair[0] == c) {           <strong>[1] 4pts</strong>
+return true;
+}
+}</p>
+<pre dir="auto"><code>  _________________;               **return false; 3pts **
+</code></pre>
+<p dir="auto">}</p>
+<p dir="auto">// pairs is an nx2 array of characters, with each row representing a
+// balanced pair, e.g. [['(',')'], ['{','}'], ... ]. Return true iff text is
+// properly balanced for the character-pairs in pairs.
+static boolean isBalanced(String text, char[][] pairs) {
+LinkStack<Character> stack = new LinkStack<Character>();
+for (char c : text.toCharArray()) {
+Character partner = getMatch(c, pairs);
+if (partner != null) {
+stack.push(partner);
+}
+else {                   <strong>&amp;&amp; =&gt; !! 5pts stack.isEmpty() 5pts</strong>
+if (isCloser(c, pairs) || (___________________ || stack.pop() != c))</p>
+<pre dir="auto"><code>           ____________________  **return false 6pts**
+     }
+  }
+  return ______________________    **stack.isEmpty() 10pts**
+</code></pre>
+<p dir="auto">}</p>
+<pre><code dir="auto"></code></pre>
+
+</body>
+</html>
