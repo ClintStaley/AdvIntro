@@ -279,11 +279,51 @@
 #### InsertSort
   * Inefficiency: ndx = lo+1
   * Stability.  <= should be < for stability
+  * Write it in reverse, packing sorted to right
 
 #### QuickSort
   * Walk through partition
-  * 
+  * Ask them to fill in "else" block of partition
+
 ### Hash Tables
+  * General concept
+  * Concepts: hashCode, collisions
 
 #### LLHashSet
-  * Bug: Check needs to see if list.isEmpty() and return fals ahead of doing list.size
+  * Bug: Check needs to see if list.isEmpty() and return false ahead of doing list.size
+
+#### LPHashSet
+  * Go over add without wasFull consideration
+  * Bug: nullCount == 0 should be == 1
+  * Discuss issues with deletion
+  * Track full code with assumption that we use wasFulls
+  * Bug: nullCount-- should be qualified by if (table[idx] == null)
+
+### Trees
+  * General idea
+  * Build tree for 10 5 7 2 20 3 24
+  * What if we presort the data to "help" the tree?
+
+#### TreeSet
+  * Set interface and relation to Collection, List interfaces.
+  * contains method walkthrough
+  * add method walkthrough
+     * Bug: right for left in parent addition
+     * Bug: Missing size++ (all members, all methods)
+  * remove method walkthrough
+    * Note present remove goes down right, not left, tree.
+    * Question: can parent.left == child if line 103 was true?  (Yes, in odd case)
+
+### DFS and BFS
+  * Overview ideas
+     * States, transitions, paths, costs, optimality, step cost
+  * Problem class
+     * State interface
+     * Step interface
+     * Problem interface
+  * Solver
+     * Solution class
+     * solveProblem
+  * GemPuzzle example Problem
+  
+

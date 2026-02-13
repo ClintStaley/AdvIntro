@@ -82,9 +82,9 @@ class NoDupsLinkStack ___________________________________ {
       
    }
 
-   public void **2pts push(int val) {
+   public void _____________________ {
 
-      if (_______________________)**
+      if (_______________________)
 
          ________________________
    }
@@ -127,7 +127,7 @@ public void undoAdd() {
 
       ________________________; 
    else {
-      for (temp = mHead; temp[.next] (8pts) != mTail; temp = temp.next)
+      for (temp = mHead; temp != mTail; temp = temp.next)
          ;
       mTail = temp;
       

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="dbllinkqueue-quiz">DblLinkQueue Quiz</h1>
+<p dir="auto">Name_________________________________________________</p>
+<p dir="auto"><strong>1. 24pts</strong><br>
+Fix this implementation of addToEnd for DblLinkQueue by filling in the blank lines,
+and repairing one other bug.</p>
+<pre><code dir="auto">// Attach the nodes of src to the end of the receiver object, leaving src
+// as a valid empty queue.
+public void addToEnd(DblLinkQueue&lt;Item&gt; src) {
+   mHead.prev.next = src.mHead.next;
+
+   src.mHead_______________ = mHead.prev;   8pts .next.prev
+   
+   mHead.prev = src.mHead;                  8pts .prev;
+
+   mHead.prev.next = _______;               4pts mHead
+   
+   src.mHead.next = src.mHead.prev = ___________;  4pts src.mHead
+}
+   
+</code></pre>
+
+</body>
+</html>
