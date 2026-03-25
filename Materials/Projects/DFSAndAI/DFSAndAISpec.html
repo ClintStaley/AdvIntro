@@ -1,0 +1,467 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="ai-project">AI Project</h1>
+<h3 dir="auto" id="bronze-level">Bronze Level</h3>
+<p dir="auto">Complete the Gem puzzle solving program from class, following the design
+we discussed.  Here, and in all other levels, use the provided SolvePuzzle.java code and the Problem and Solver interfaces, without modification.</p>
+<p dir="auto">Adjust the DFSSolver code from class, fixing any omissions and bugs, and use this as your solver engine.</p>
+<h2 dir="auto" id="input-formats">Input formats</h2>
+<p dir="auto">The input of the GemPuzzle problem was already defined in class and in the provided readProblem code.  Here is an example, but you must make more of your own.  And you may of course adjust the package names of the Problem and Solver class
+to match yours.</p>
+<pre><code dir="auto">com.cstaley.csci182.AI.Answer.GemPuzzle
+com.cstaley.csci182.AI.Answer.DFSSolver
+15 5
+
+2 3
+2 4 3
+1 0 5
+</code></pre>
+<p dir="auto">Catch and report any dimensions larger than 5. Report these by throwing suitable exceptions for SolvePuzzle to catch and print.</p>
+<h2 dir="auto" id="output-format">Output format</h2>
+<p dir="auto">The output for GemPuzzle is a series of paths, in the natural order that results from exploring in north, east, south, west order.  Here is the correct output for the provided input case above.</p>
+<pre><code dir="auto">Enter problem type, solution type, max cost and max # of solutions: Enter puzzle problem: 
+Answers are: 
+Answer 0 with cost 15
+   north
+   west
+   south
+   east
+   north
+   east
+   south
+   west
+   north
+   east
+   south
+   west
+   north
+   east
+   south
+Answer 1 with cost 5
+   north
+   west
+   south
+   east
+   east
+Answer 2 with cost 15
+   east
+   north
+   west
+   south
+   east
+   north
+   west
+   south
+   east
+   north
+   west
+   west
+   south
+   east
+   east
+Answer 3 with cost 9
+   west
+   north
+   east
+   south
+   west
+   north
+   east
+   south
+   east
+</code></pre>
+<p dir="auto">And here are two more</p>
+<pre><code dir="auto">com.cstaley.csci182.AI.Answer.GemPuzzle
+ com.cstaley.csci182.AI.Answer.DFSSolver 10 2
+4 4
+ 1 2 3 4
+ 6 7 0 8
+ 5 10 15 11
+ 9 13 14 12
+Answers are: 
+Answer 0 with cost 9
+   west
+   west
+   south
+   south
+   east
+   east
+   north
+   east
+   south
+
+com.cstaley.csci182.AI.Answer.GemPuzzle
+ com.cstaley.csci182.AI.Answer.DFSSolver 4 2
+4 4
+ 1 2 3 4
+ 6 7 0 8
+ 5 10 15 11
+ 9 13 14 12
+No solution exists.
+</code></pre>
+<h4 dir="auto" id="submitting-bronze">Submitting Bronze</h4>
+<p dir="auto">Ensure you get the correct outputs for the three given cases saving these in files Test1-3.in, and the matching output (from your program run, not copied here) in Test1-3.out.  Finally, add another test case of 5x5 dimension, with a known solution of 6 steps that your code properly finds when presented with the problem and a cost limit of 6.  Save this as Test4.in and Test4.out.</p>
+<p dir="auto">Submit Test1-4.in, Test1-4.out, GemPuzzle.java, and DFSSolver.java.</p>
+<h3 dir="auto" id="silver-level">Silver Level</h3>
+<p dir="auto">Write a Sudoku.java file to solve a standard 9x9 Sudoku puzzle.<br>
+The input of the Sudoku problem is as shown here, with zeros for open cells.</p>
+<pre><code dir="auto">com.cstaley.csci182.AI.Answer.Sudoku
+com.cstaley.csci182.AI.Answer.DFSSolver
+530070000
+600195000
+098000060
+800060003
+400803001
+700020006
+060000280
+000419005
+000080079
+</code></pre>
+<p dir="auto">The output for Sudoku is the 9x9 grid of filled in values (no spaces).  The order of &quot;moves&quot; for solutions from a given board
+is in the left to right order of the open cells, and for each cell, in ascending order of possible numbers to place in that cell.</p>
+<p dir="auto">It is not necessary, and indeed highly inefficient, to iterate across <em>all</em> possible moves for a given Sudoku state.  Iterate only across the SudokuSteps possible from the first zero-cell in row-major order, leaving later states to iterate across later zero-cells.  In effect, this is like playing Sudoku where you must fill in open cells from left to right, which is perfectly possible.  The test cases below will assume this order of exploration.</p>
+<p dir="auto">Here is the output for the input just given.</p>
+<pre><code dir="auto">534678912
+672195348
+198342567
+859761423
+426853791
+713924856
+961537284
+287419635
+345286179
+</code></pre>
+<p dir="auto">And here is a second</p>
+<pre><code dir="auto">com.cstaley.csci182.AI.Answer.SudokuPuzzle
+com.cstaley.csci182.AI.Answer.DFSSolver 80 2
+Enter problem: 
+ 5 3 0 0 7 0 0 0 0
+ 6 0 0 1 9 5 0 0 0
+ 0 9 8 0 0 0 0 6 0
+ 8 0 0 0 0 0 0 0 3
+ 4 0 0 8 0 3 0 0 1
+ 7 0 0 0 2 0 0 0 6
+ 0 6 0 0 0 0 2 8 0
+ 0 0 0 4 1 9 0 0 5
+ 0 0 0 0 8 0 0 7 9
+Answers are: 
+Answer 0 with cost 52
+   (0, 2 -&gt; 4)
+   (0, 3 -&gt; 6)
+   (0, 5 -&gt; 8)
+   (0, 6 -&gt; 9)
+   (0, 7 -&gt; 1)
+   (0, 8 -&gt; 2)
+   (1, 1 -&gt; 7)
+   (1, 2 -&gt; 2)
+   (1, 6 -&gt; 3)
+   (1, 7 -&gt; 4)
+   (1, 8 -&gt; 8)
+   (2, 0 -&gt; 1)
+   (2, 3 -&gt; 3)
+   (2, 4 -&gt; 4)
+   (2, 5 -&gt; 2)
+   (2, 6 -&gt; 5)
+   (2, 8 -&gt; 7)
+   (3, 1 -&gt; 2)
+   (3, 2 -&gt; 6)
+   (3, 3 -&gt; 7)
+   (3, 4 -&gt; 5)
+   (3, 5 -&gt; 1)
+   (3, 6 -&gt; 4)
+   (3, 7 -&gt; 9)
+   (4, 1 -&gt; 5)
+   (4, 2 -&gt; 9)
+   (4, 4 -&gt; 6)
+   (4, 6 -&gt; 7)
+   (4, 7 -&gt; 2)
+   (5, 1 -&gt; 1)
+   (5, 2 -&gt; 3)
+   (5, 3 -&gt; 9)
+   (5, 5 -&gt; 4)
+   (5, 6 -&gt; 8)
+   (5, 7 -&gt; 5)
+   (6, 0 -&gt; 9)
+   (6, 2 -&gt; 1)
+   (6, 3 -&gt; 5)
+   (6, 4 -&gt; 3)
+   (6, 5 -&gt; 7)
+   (6, 8 -&gt; 4)
+   (7, 0 -&gt; 2)
+   (7, 1 -&gt; 8)
+   (7, 2 -&gt; 7)
+   (7, 6 -&gt; 6)
+   (7, 7 -&gt; 3)
+   (8, 0 -&gt; 3)
+   (8, 1 -&gt; 4)
+   (8, 2 -&gt; 5)
+   (8, 3 -&gt; 2)
+   (8, 5 -&gt; 6)
+   (8, 6 -&gt; 1)
+Answer 1 with cost 52
+   (0, 2 -&gt; 4)
+   (0, 3 -&gt; 6)
+   (0, 5 -&gt; 8)
+   (0, 6 -&gt; 9)
+   (0, 7 -&gt; 1)
+   (0, 8 -&gt; 2)
+   (1, 1 -&gt; 7)
+   (1, 2 -&gt; 2)
+   (1, 6 -&gt; 3)
+   (1, 7 -&gt; 4)
+   (1, 8 -&gt; 8)
+   (2, 0 -&gt; 1)
+   (2, 3 -&gt; 3)
+   (2, 4 -&gt; 4)
+   (2, 5 -&gt; 2)
+   (2, 6 -&gt; 5)
+   (2, 8 -&gt; 7)
+   (3, 1 -&gt; 5)
+   (3, 2 -&gt; 9)
+   (3, 3 -&gt; 7)
+   (3, 4 -&gt; 6)
+   (3, 5 -&gt; 1)
+   (3, 6 -&gt; 4)
+   (3, 7 -&gt; 2)
+   (4, 1 -&gt; 2)
+   (4, 2 -&gt; 6)
+   (4, 4 -&gt; 5)
+   (4, 6 -&gt; 7)
+   (4, 7 -&gt; 9)
+   (5, 1 -&gt; 1)
+   (5, 2 -&gt; 3)
+   (5, 3 -&gt; 9)
+   (5, 5 -&gt; 4)
+   (5, 6 -&gt; 8)
+   (5, 7 -&gt; 5)
+   (6, 0 -&gt; 9)
+   (6, 2 -&gt; 1)
+   (6, 3 -&gt; 5)
+   (6, 4 -&gt; 3)
+   (6, 5 -&gt; 7)
+   (6, 8 -&gt; 4)
+   (7, 0 -&gt; 2)
+   (7, 1 -&gt; 8)
+   (7, 2 -&gt; 7)
+   (7, 6 -&gt; 6)
+   (7, 7 -&gt; 3)
+   (8, 0 -&gt; 3)
+   (8, 1 -&gt; 4)
+   (8, 2 -&gt; 5)
+   (8, 3 -&gt; 2)
+   (8, 5 -&gt; 6)
+   (8, 6 -&gt; 1)
+
+com.cstaley.csci182.AI.Answer.SudokuPuzzle
+com.cstaley.csci182.AI.Answer.DFSSolver 81 2
+Enter problem: 
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+Answers are: 
+Answer 0 with cost 81
+   (0, 0 -&gt; 1)
+   (0, 1 -&gt; 2)
+   (0, 2 -&gt; 3)
+   (0, 3 -&gt; 4)
+   (0, 4 -&gt; 5)
+   (0, 5 -&gt; 6)
+   (0, 6 -&gt; 7)
+   (0, 7 -&gt; 8)
+   (0, 8 -&gt; 9)
+   (1, 0 -&gt; 4)
+   (1, 1 -&gt; 5)
+   (1, 2 -&gt; 6)
+   (1, 3 -&gt; 7)
+   (1, 4 -&gt; 8)
+   (1, 5 -&gt; 9)
+   (1, 6 -&gt; 1)
+   (1, 7 -&gt; 2)
+   (1, 8 -&gt; 3)
+   (2, 0 -&gt; 7)
+   (2, 1 -&gt; 8)
+   (2, 2 -&gt; 9)
+   (2, 3 -&gt; 1)
+   (2, 4 -&gt; 2)
+   (2, 5 -&gt; 3)
+   (2, 6 -&gt; 4)
+   (2, 7 -&gt; 5)
+   (2, 8 -&gt; 6)
+   (3, 0 -&gt; 2)
+   (3, 1 -&gt; 1)
+   (3, 2 -&gt; 4)
+   (3, 3 -&gt; 3)
+   (3, 4 -&gt; 6)
+   (3, 5 -&gt; 5)
+   (3, 6 -&gt; 8)
+   (3, 7 -&gt; 9)
+   (3, 8 -&gt; 7)
+   (4, 0 -&gt; 3)
+   (4, 1 -&gt; 6)
+   (4, 2 -&gt; 5)
+   (4, 3 -&gt; 8)
+   (4, 4 -&gt; 9)
+   (4, 5 -&gt; 7)
+   (4, 6 -&gt; 2)
+   (4, 7 -&gt; 1)
+   (4, 8 -&gt; 4)
+   (5, 0 -&gt; 8)
+   (5, 1 -&gt; 9)
+   (5, 2 -&gt; 7)
+   (5, 3 -&gt; 2)
+   (5, 4 -&gt; 1)
+   (5, 5 -&gt; 4)
+   (5, 6 -&gt; 3)
+   (5, 7 -&gt; 6)
+   (5, 8 -&gt; 5)
+   (6, 0 -&gt; 5)
+   (6, 1 -&gt; 3)
+   (6, 2 -&gt; 1)
+   (6, 3 -&gt; 6)
+   (6, 4 -&gt; 4)
+   (6, 5 -&gt; 2)
+   (6, 6 -&gt; 9)
+   (6, 7 -&gt; 7)
+   (6, 8 -&gt; 8)
+   (7, 0 -&gt; 6)
+   (7, 1 -&gt; 4)
+   (7, 2 -&gt; 2)
+   (7, 3 -&gt; 9)
+   (7, 4 -&gt; 7)
+   (7, 5 -&gt; 8)
+   (7, 6 -&gt; 5)
+   (7, 7 -&gt; 3)
+   (7, 8 -&gt; 1)
+   (8, 0 -&gt; 9)
+   (8, 1 -&gt; 7)
+   (8, 2 -&gt; 8)
+   (8, 3 -&gt; 5)
+   (8, 4 -&gt; 3)
+   (8, 5 -&gt; 1)
+   (8, 6 -&gt; 6)
+   (8, 7 -&gt; 4)
+   (8, 8 -&gt; 2)
+Answer 1 with cost 81
+   (0, 0 -&gt; 1)
+   (0, 1 -&gt; 2)
+   (0, 2 -&gt; 3)
+   (0, 3 -&gt; 4)
+   (0, 4 -&gt; 5)
+   (0, 5 -&gt; 6)
+   (0, 6 -&gt; 7)
+   (0, 7 -&gt; 8)
+   (0, 8 -&gt; 9)
+   (1, 0 -&gt; 4)
+   (1, 1 -&gt; 5)
+   (1, 2 -&gt; 6)
+   (1, 3 -&gt; 7)
+   (1, 4 -&gt; 8)
+   (1, 5 -&gt; 9)
+   (1, 6 -&gt; 1)
+   (1, 7 -&gt; 2)
+   (1, 8 -&gt; 3)
+   (2, 0 -&gt; 7)
+   (2, 1 -&gt; 8)
+   (2, 2 -&gt; 9)
+   (2, 3 -&gt; 1)
+   (2, 4 -&gt; 2)
+   (2, 5 -&gt; 3)
+   (2, 6 -&gt; 4)
+   (2, 7 -&gt; 5)
+   (2, 8 -&gt; 6)
+   (3, 0 -&gt; 2)
+   (3, 1 -&gt; 1)
+   (3, 2 -&gt; 4)
+   (3, 3 -&gt; 3)
+   (3, 4 -&gt; 6)
+   (3, 5 -&gt; 5)
+   (3, 6 -&gt; 8)
+   (3, 7 -&gt; 9)
+   (3, 8 -&gt; 7)
+   (4, 0 -&gt; 3)
+   (4, 1 -&gt; 6)
+   (4, 2 -&gt; 5)
+   (4, 3 -&gt; 8)
+   (4, 4 -&gt; 9)
+   (4, 5 -&gt; 7)
+   (4, 6 -&gt; 2)
+   (4, 7 -&gt; 1)
+   (4, 8 -&gt; 4)
+   (5, 0 -&gt; 8)
+   (5, 1 -&gt; 9)
+   (5, 2 -&gt; 7)
+   (5, 3 -&gt; 2)
+   (5, 4 -&gt; 1)
+   (5, 5 -&gt; 4)
+   (5, 6 -&gt; 3)
+   (5, 7 -&gt; 6)
+   (5, 8 -&gt; 5)
+   (6, 0 -&gt; 5)
+   (6, 1 -&gt; 3)
+   (6, 2 -&gt; 1)
+   (6, 3 -&gt; 6)
+   (6, 4 -&gt; 4)
+   (6, 5 -&gt; 2)
+   (6, 6 -&gt; 9)
+   (6, 7 -&gt; 7)
+   (6, 8 -&gt; 8)
+   (7, 0 -&gt; 6)
+   (7, 1 -&gt; 4)
+   (7, 2 -&gt; 8)
+   (7, 3 -&gt; 9)
+   (7, 4 -&gt; 7)
+   (7, 5 -&gt; 1)
+   (7, 6 -&gt; 5)
+   (7, 7 -&gt; 3)
+   (7, 8 -&gt; 2)
+   (8, 0 -&gt; 9)
+   (8, 1 -&gt; 7)
+   (8, 2 -&gt; 2)
+   (8, 3 -&gt; 5)
+   (8, 4 -&gt; 3)
+   (8, 5 -&gt; 8)
+   (8, 6 -&gt; 6)
+   (8, 7 -&gt; 4)
+   (8, 8 -&gt; 1)
+</code></pre>
+<h4 dir="auto" id="submitting-silver">Submitting Silver</h4>
+<p dir="auto">Submit Suduko.java, Test1-2.in and Test1-2.out giving the two inputs provided and <em>your</em> output for them (which must match the outputs given).  Also submit a Test3.in file with all zeros as initial values, a limit of just one solution, and your Test3.out file showing the result.</p>
+<h3 dir="auto" id="gold-level">Gold Level</h3>
+<p dir="auto">write an AStarSolver.java, using BFSSolver.java as a starting point, to solve GemPuzzle with a focus on finding the shortest path to a solution.  You'll need a priority queue for this.  Complete the provided HeapPQueue.java file for this.  Ensure that your AStarSolver prioritizes based on the total of cost thus far incurred (cost of the current path-stack) and the getDistance value estimating remaining cost.</p>
+<h4 dir="auto" id="submitting-gold">Submitting Gold</h4>
+<p dir="auto">Create a test case of your own, 5x5, with multiple possible solutions, and demonstrate that it finds solutions in order of their length.  Limit output to 5 solutions.  Submit HeapPQueue.java, AStarSolver.java, Test1.in and Test1.out.</p>
+<h3 dir="auto" id="platinum-level">Platinum Level</h3>
+<ol dir="auto">
+<li dir="auto">Implement a branch-and-bound solver, based on optional last-week lecture on Monday and perhaps Tuesday.  This implements Solver, and uses the same interfaces we already have, but assumes that getDistance provides a guaranteed lower bound on the remaining cost, not just an estimate.</li>
+<li dir="auto">Build a Problem class to solve a 2-D <strong>rectangle packing</strong> problem.</li>
+</ol>
+<h4 dir="auto" id="submitting-platinum">Submitting Platinum</h4>
+<p dir="auto">This one is demo-first.  Set up a demo with me or the course CM.  Be prepared with good test cases; we'll expect you to create a number of them, including ones where you can be sure of the best solution.  Be prepared to discuss your B&amp;B code.</p>
+<h2 dir="auto" id="hints-and-traps-to-avoid">Hints and Traps to Avoid</h2>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">Do not use System.out.print for debugging!  The logging system will buffer differently from the System.out and you'll get oddly misordered print lines.  Use only log messages for debugging.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Start your testing on small GemPuzzle examples, say at most 3x3, and on Sudoku puzzles with only a few empty cells.</p>
+</li>
+</ol>
+
+</body>
+</html>

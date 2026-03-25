@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="file:///c:\Users\clint\.vscode\extensions\goessner.mdmath-2.7.4\themes\default\style.css">
+
+</head>
+<body class="markdown-body">
+<h1 dir="auto" id="hash-tables-project">Hash Tables Project</h1>
+<h3 dir="auto" id="bronze-level">Bronze Level</h3>
+<p dir="auto">Build on the LLHashSet example from class to do the following.</p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">Start with the code from class, which should have a constructor, two member data and the <code>contains</code>, <code>add</code> and <code>remove</code>, <code>size</code>, and <code>isEmpty</code> functions.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Fix the missing code in <code>check</code> as discussed in class.  Add a <code>check</code> call after each iteration of the while-loop in main, printing &quot;ERROR&quot; if it fails.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Add a variadic <code>add</code> method that accepts an E... parameter.  This will let you
+quickly add elements to a hashtable.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Augment main, using the small example given as a starting point.</p>
+<ul dir="auto">
+<li dir="auto">Have a command for each method.</li>
+<li dir="auto">Create an array of 4 LLHashSets of sizes 1, 4, 8, and 8, which you'll use in testing.</li>
+<li dir="auto">Adjust each command to take the form <cmd> &lt;set#&gt; <args>, with <code>set#</code> a value 0-3 identifying the hashtable on which to run the command, and <code>args</code> as appropriate for the command.  This will let you build input files that set up the hash sets and run commands on them.  For instance:
+<ul dir="auto">
+<li dir="auto">Add several values to set 1:  <code>addAll 1 42 32 45 -9</code></li>
+<li dir="auto">Check if set 1 contains 42: <code>contains 1 42</code> (prints true)</li>
+<li dir="auto">Remove 42 from set 1: <code>remove 1 42</code> (prints true since remove succeeds)</li>
+<li dir="auto">Check again for 42 <code>contains 1 42</code>  (now prints false)</li>
+</ul>
+</li>
+<li dir="auto">For each of the added methods below, supply a main program command.  For methods like <code>containsAll</code> that take a Collection, use the already given
+example, but be sure you understand how it works.  For instance, you might be
+asked to explain how many new List objects <code>Arrays.asList</code> creates and what
+other methods are supplied by <code>Arrays</code>.</li>
+</ul>
+</li>
+<li dir="auto">
+<p dir="auto">Write a <code>toString</code> method that returns a String giving a diagram of the hash table. Show one line per table entry, showing <code>null</code> or a list of one or more entries at that location, each with its hash code in parentheses.  Add a &quot;print&quot; command to main that calls this toString method (without actually using the name &quot;toString&quot; -- call it implicitly).</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write the <code>LLItr</code> class, and the <code>iterator</code> function.  <code>LLItr</code> tracks both which element it is currently &quot;on&quot; and has a &quot;sub iterator&quot; to track its current position in the LinkedList for that element.  Leave the <code>LLItr.remove</code> method unimplemented for now. Include a command <code>iterate</code> in your main that iterates through and prints all the elements in a hash table.  Test it on empty and various full tables including ones with several elements in the same bucket.  (Adding at least 5 elements to table 1, the 4-sized table, could do this.)</p>
+</li>
+<li dir="auto">
+<p dir="auto">Use an iterator to implement <code>containsAll</code>, in just four lines of code.  You can enter a list of strings to make a container of strings in your command interpreter via an approach we'll do in class.  In the test main code, you'll need to read in a series of words, e.g. <code>containsAll 1 alpha beta gamma</code></p>
+</li>
+<li dir="auto">
+<p dir="auto">Write the <code>addAll</code> and <code>removeAll</code> methods.  <em>Be sure they return the correct boolean value</em> These should take about 5 lines each.  And, there may come a point where you need to remember that the | and &amp; operators are the same as || and &amp;&amp; but <em>without</em> short-circuiting behavior.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write the <code>retainAll</code> method.  You may find it useful to recall that List already has its own <code>retainAll</code>.  This method is a little harder than <code>addAll</code> and <code>removeAll</code>.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write both <code>toArray</code> methods.  The 'toArray' command in the main does the following:</p>
+</li>
+</ol>
+<ul dir="auto">
+<li dir="auto">Calls <code>toArray()</code> to get an array <code>arr1</code></li>
+<li dir="auto">Calls <code>toArray(T[])</code>, passing it a new array <code>arr2</code> of the right size</li>
+<li dir="auto">Checks that <code>arr1</code> and <code>arr2</code> have identical content</li>
+<li dir="auto">Checks that the <code>arr1</code>'s length equals the size of the table</li>
+<li dir="auto">Checks that every element of <code>arr1</code> is in the table, via a containsAll call</li>
+<li dir="auto">Changes the last element of <code>arr1</code> to &quot;NOT HERE&quot; (which presumably is not in the table) and checks that now the containsAll call fails.</li>
+<li dir="auto">If any of the above steps fails, prints an error message.</li>
+</ul>
+<ol dir="auto">
+<li dir="auto">Build a good test input file LLHashSetTest.in, including the following
+<ul dir="auto">
+<li dir="auto">Execution of every command including <code>iterate</code> and <code>toString</code></li>
+<li dir="auto">Test commands, especially <code>iterate</code>, on a variety of tables, including an empty one and one that has some empty and some very full buckets.</li>
+<li dir="auto">Test commands, especially <code>iterate</code>, on a table of one bucket.</li>
+<li dir="auto">Test cases where commands like remove or removeAll return both a true and a false.</li>
+<li dir="auto">In all, an input file of at least 100 commands is expected.</li>
+</ul>
+</li>
+</ol>
+<h4 dir="auto" id="submitting-bronze">Submitting Bronze</h4>
+<p dir="auto">Using the test main you built, run the specified input file, and check that its
+output is correct.  Then submit LLHashSet.java, LLHashSetTest.in, and the output file, calling it LLHashSetTest.out</p>
+<h3 dir="auto" id="silver">Silver</h3>
+<p dir="auto">Repeat all you did for LLHashSet, but this time for LPHashSet, and with the
+following additions:</p>
+<ol dir="auto">
+<li dir="auto">
+<p dir="auto">Write <code>contains</code>, <code>remove</code>, and <code>reHash</code></p>
+</li>
+<li dir="auto">
+<p dir="auto">Main creates 4 LPHashSets with sizes 2, 4, 8, and 16.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Be sure your LPHastSetTest.in adds 16 items to the size-2 LPHashSet, forcing 4 rehashes in all.</p>
+</li>
+<li dir="auto">
+<p dir="auto">toString produces a String with one row per bucket, showing either <code>&lt;null&gt;</code> or the sole content of that bucket followed by its hash code in parentheses.</p>
+</li>
+</ol>
+<h4 dir="auto" id="submitting-silver">Submitting Silver</h4>
+<p dir="auto">Submit LPHashSet.java, LPHashSetTest.in, and LPHashSetTest.out after careful checking of the output.</p>
+<h3 dir="auto" id="gold">Gold</h3>
+<ol dir="auto">
+<li dir="auto">Add remove to both the LLHashSet and LPHashSet iterators.  Test this with a
+<code>itrRemove</code> command in <code>main</code> that sets up an iterator and then:</li>
+</ol>
+<ul dir="auto">
+<li dir="auto">attempts an iterator remove with no next, catching the resultant exception</li>
+<li dir="auto">does a next and then two removes in a row, again catching the exception</li>
+<li dir="auto">iterates through the rest of the hash table, doing a <code>remove</code> after each <code>next</code>, leaving nothing in the table.  (Verify this both by a call of <code>isEmpty</code> and by creating a second iterator on the now-empty table and ensuring its <code>hasNext</code> immediately returns false)</li>
+</ul>
+<ol start="2" dir="auto">
+<li dir="auto">
+<p dir="auto">Tune up LLHashSet by creating a reHash method and doubling the number of buckets (rehashing as needed) when the average number of collision-list traversal steps to reach any item exceeds 2 -- when the average item is at least third in its list.  Think carefully about this rule.  Note, for instance, that it's <em>not</em> a matter of the average collision-list length.  An average length of 5 would trigger this case, but <em>only if all collision-lists had length 5</em>.  One can get an average list-length of 5 with one bucket of 50 items, and 9 empty buckets.  In such a case, the average number of traversal steps is 24.5.</p>
+</li>
+<li dir="auto">
+<p dir="auto">Write a main program to speed-test LPHashSet and your improved LLHashSet:</p>
+</li>
+</ol>
+<ul dir="auto">
+<li dir="auto">Make one object of each type, using Integer</li>
+<li dir="auto">Generate, randomly, an array of 1,000,000 Integers</li>
+<li dir="auto">Test each of the hash tables by noting system time in mS, then adding 1,000,000 integers to it, then checking each of them for being in the table, then removing them all via a removeAll call.  Note the system time afterward and report the difference in mS.</li>
+</ul>
+<h4 dir="auto" id="submitting-gold">Submitting Gold</h4>
+<p dir="auto">Submit your LLHashSet.java and LPHashSet.java files with the added iterator remove methods and test code for it in the respective files' main methods.  Submit also a HTSpeedTest.java file with a main that performs the system-time based analysis of relative speed, and a SpeedTest.out text file showing the results of that main call.</p>
+
+</body>
+</html>
